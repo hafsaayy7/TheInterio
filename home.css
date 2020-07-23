@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+}
+
+#top_div {
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+  background: black;
+  color: gray;
+  margin: 0;
+}
+
+#title-div {
+  color: #00cca3;
+  display: flex;
+  font-size: 40px;
+  padding-top: 0;
+  width: 30%;
+  padding-left: 50px;
+  height: 100%;
+  align-items: center;
+}
+
+#navbar-div {
+  align-items: center;
+  width: 70%;
+  display: flex;
+  height: 100%;
+  float: right;
+  justify-content: flex-end;
+  margin-right: 5%;
+}
+li {
+  list-style-type: none;
+}
+
+li a {
+  text-decoration: none;
+  /*padding-left: 30px;*/
+  color: gray;
+  display: block;
+  margin-top: 0;
+  padding: 38px 30px;
+}
+
+li a:hover {
+  background: #00cca3;
+  color: black;
+}
+.active {
+  background-color: #00cca3;
+  color: black;
+}
+
+body {
+  font-family: Verdana, sans-serif;
+}
+.mySlides {
+  display: none;
+}
+img {
+  vertical-align: middle;
+}
+
+.slideshow-container {
+  height: 100vh;
+}
+
+/* For slideshow images */
+
+.slideshow-container .mySlides img {
+  height: 85vh;
+  width: 100%;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  width: 100%;
+  text-align: center;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {
+    font-size: 11px;
+  }
+}
