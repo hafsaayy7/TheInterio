@@ -74,12 +74,36 @@ img {
   width: 100%;
 }
 
+/* here we are applying css for image caption in slider or carousel */
+
+.text_caption{
+  padding: 10px 0; 
+  text-align: center;
+  
+}
+
+/* padding to H2 in image caption later we will change font stlying as well */
+.text_caption h2{
+  margin: 10px 0;
+}
+
 /* Caption text */
 .text {
-  color: #f2f2f2;
-  font-size: 15px;
-  width: 100%;
-  text-align: center;
+
+  background: rgba(20, 20, 20, 0.82);  /* this property will give us opacty above image caption    */
+  /* margin: 0 auto; */
+  color: white;
+  
+}
+
+
+/* claim design card stlying 
+ */
+.claim_design{
+    background-color: #05BA8E;
+    border-bottom: 2px solid #EAEAEA;
+    color: black;
+    margin-bottom: 20px;
 }
 
 /* The dots/bullets/indicators */
@@ -92,6 +116,13 @@ img {
   display: inline-block;
   transition: background-color 0.6s ease;
 }
+
+
+.icon-center {
+  display: block;
+  margin: auto;
+}
+
 
 .active {
   background-color: #717171;
