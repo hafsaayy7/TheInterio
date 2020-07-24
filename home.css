@@ -160,3 +160,77 @@ img {
     font-size: 11px;
   }
 }
+
+
+
+/* Hexagone shape */
+
+.service-box {
+  margin: 25px 0 36px;
+  text-align: center;
+}
+
+
+.hexagon {
+  display: inline-block;
+  position: relative;
+  padding: 45px 0;
+  margin-bottom: 20px;
+}
+
+.hexagon .inner {
+  vertical-align: middle;
+  display: table-cell;
+  width: 150px;
+  height: 87px;
+  border-left: 1px solid #05BA8E;
+  border-right: 1px solid #05BA8E;
+}
+
+
+
+.hexagon:before, .hexagon:after {
+  content: '';
+  position: absolute;
+  top: 45px;
+  left: 0;
+  width: 150px;
+  height: 87px;
+  -moz-transform: rotate(60deg);
+  -ms-transform: rotate(60deg);
+  -o-transform: rotate(60deg);
+  -webkit-transform: rotate(60deg);
+  transform: rotate(60deg);
+  border-right: 1px solid #05BA8E;
+  border-left: 1px solid #05BA8E;
+}
+:before, :after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.hexagon:after {
+  -moz-transform: rotate(-60deg);
+  -ms-transform: rotate(-60deg);
+  -o-transform: rotate(-60deg);
+  -webkit-transform: rotate(-60deg);
+  transform: rotate(-60deg);
+}
+
+
+
+/* ABout us styling */
+
+.section-header{
+  margin-top :20px;
+  margin-bottom: 60px;
+}
+
+.line-wrapper{
+  display: inline-block;
+}
+
+.btn-color{
+  background-color: #00cca3;
+  color: white;
+}
