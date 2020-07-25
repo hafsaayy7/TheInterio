@@ -237,6 +237,66 @@ img {
   color: #00cca3;
 }
 
+
+.price-card-container{
+  margin : 20px 0
+}
+
+
+.pricing{
+  
+  margin: 10px 0;
+  font-family: 'Raleway', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00cca3;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+
+  
+}
+
+.pricing span{
+  font-size: 24px;
+  font-weight: bolder;
+  /* border-bottom: 2px dashed black; */
+ }
+
+ .card h2{
+   text-transform: uppercase;
+   font-weight: 600;
+ }
+ button{
+   background-color: #00cca3;
+   color: white;
+ }
+
+
+ .testimonial{
+   background-color: black;
+   /* margin-bottom: 30px; */
+ }
+
+ .contact-us{
+   /* background-color: grey; */
+   background: #D2D2D2;
+   padding: 40px 0px;
+ }
+
+ .contact-us h2 span{
+   border-bottom: 3px solid #00cca3;
+  }
+  .contact-us h2{
+
+    margin: 20px 0;
+  }
+
+
+
+
+
 /* Footer */
 
 /* Please Subscribe My Youtube Channel
