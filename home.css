@@ -243,3 +243,82 @@ img {
   margin: 10px 0;
   /* background: #BEBEBE; */
 }
+
+
+/* Design of card */
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  /* max-width: 23%; */
+  margin: 20px 0px;
+  text-align: center;
+  font-family: arial;
+}
+.card:hover{
+  box-shadow: 0 8px 28px 0 rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+
+
+
+button:hover, a:hover {
+  opacity: 0.7;}
+
+  .price-card-container{
+    margin-bottom: 60px;
+  }
+
+.pricing{
+  
+  margin: 10px 0;
+  font-family: 'Raleway', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00cca3;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+
+  
+}
+
+.pricing span{
+  font-size: 24px;
+  font-weight: bolder;
+  /* border-bottom: 2px dashed black; */
+ }
+
+ .card h2{
+   text-transform: uppercase;
+   font-weight: 600;
+ }
+ button{
+   background-color: #00cca3;
+   color: white;
+ }
+
+
+ .testimonial{
+   background-color: black;
+   /* margin-bottom: 30px; */
+ }
+
+ .contact-us{
+   /* background-color: grey; */
+   background: #D2D2D2;
+   padding: 40px 0px;
+ }
+
+ .contact-us h2 span{
+   border-bottom: 3px solid #00cca3;
+  }
+  .contact-us h2{
+
+    margin: 20px 0;
+  }
