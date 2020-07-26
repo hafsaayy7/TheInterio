@@ -11,6 +11,58 @@
     <!--Adding font aswome icons CDN-->
     <script src="./slideshow.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" ></script>
+
+
+    <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" /> -->
+    <link
+        href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css"
+        rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script
+        src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
+
+    <script>
+        $(function () {
+            $("#test").click(function () {
+                $(".test").modal('show');
+            });
+            $(".test").modal({
+                closable: true
+            });
+        });
+        $(function () {
+            $("#login").click(function () {
+                $(".login").modal('show');
+            });
+            $(".login").modal({
+                closable: true
+            });
+        });
+        
+        $(function () {
+            $("#signup").click(function () {
+                $(".signup").modal('show');
+            });
+            $(".signup").modal({
+                closable: true
+            });
+        });
+        $(function () {
+            $("#signup2").click(function () {
+                $(".signup2").modal('show');
+            });
+            $(".signup2").modal({
+                closable: true
+            });
+        });
+
+
+       
+    </script>
+
+
 </head>
 
 <body onload="showSlides()">
@@ -19,24 +71,112 @@
             <h3>The Interiors</h3>
         </div>
         <div id="navbar-div">
+
+            <!-- inser more links here -->
+
             <li><a href="#home">Page 1</a></li>
             <li><a href="#home">Page 2</a></li>
             <li><a href="#home">Page 3</a></li>
             <li><a href="#home">Page 4</a></li>
             <li><a href="#home">Page 5</a></li>
+
         </div>
     </div>
-    <!-- Navbar ends here  -->
+    
+
+    <a class="ui button primary" id="test">
+        Login </a>
+    <div class="ui modal test login login-signup-form">
+        <div class="ui middle aligned center aligned grid">
+            <div class="column">
+                <h2 class="ui blue image header">
+                    <img src="assets/images/logo.png" class="image">
+                    <div class="content">
+                        Log-in to your account
+                    </div>
+                </h2>
+                <form class="ui large form">
+                    <div class="ui  segment">
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input type="text" name="email" placeholder="E-mail address">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="lock icon"></i>
+                                <input type="password" name="password" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="ui fluid large primary submit button">Login</div>
+                    </div>
+                </form>
+
+                <div class="ui message">
+                    New to us? <a id="signup2" href="#">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- another example -->
+    <a class="ui button primary" id="signup">
+        Sign up </a>
+
+
+    <div class="ui modal signup signup2 login-signup-form">
+        <div class="ui middle aligned center aligned grid">
+            <div class="column">
+                <h2 class="ui blue image header">
+                    <img src="assets/images/logo.png" class="image">
+                    <div class="content">
+                        signup to your account
+                    </div>
+                </h2>
+                <form class="ui large form">
+                    <div class="ui  segment">
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input type="text" name="email" placeholder="E-mail address">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="lock icon"></i>
+                                <input type="password" name="password" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="ui fluid large primary submit button">Signup</div>
+                    </div>
+                </form>
+
+                <div class="ui message">
+                    Already registered? <a id="login" href="#">Sign in</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+   
+
+
+
+    
 
 
     <!--    Slideshoe div-->
-
-    <div class="slideshow-container">
+   
+     <div class="slideshow-container">
 
         <div class="mySlides fade">
             <img src="https://picsum.photos/800/300?id=1">
-            <!-- Hre i am implementing caption above image in carousel or slider ... in bootstrap we call it carousel  -->
-            <div class="text">
+             <!-- Hre i am implementing caption above image in carousel or slider ... in bootstrap we call it carousel  -->
+    <div class="text">
                 <div class="text_caption">
                     <h2>
                         Caption Three
@@ -47,10 +187,10 @@
             </div>
         </div>
 
-        <div class="mySlides fade">
+    <div class="mySlides fade">
             <img src="https://picsum.photos/800/300?id=2">
-            <!-- Hre i am implementing caption above image in carousel or slider ... in bootstrap we call it carousel  -->
-            <div class="text">
+    <!-- Hre i am implementing caption above image in carousel or slider ... in bootstrap we call it carousel  -->
+    <div class="text">
                 <div class="text_caption">
                     <h2>
                         Caption Three
@@ -61,12 +201,12 @@
             </div>
         </div>
 
-        <div class="mySlides fade">
+    <div class="mySlides fade">
             <img src="https://picsum.photos/800/300?id=2">
 
 
-            <!-- Hre i am implementing caption above image in carousel or slider ... in bootstrap we call it carousel  -->
-            <div class="text">
+    <!-- Hre i am implementing caption above image in carousel or slider ... in bootstrap we call it carousel  -->
+    <div class="text">
                 <div class="text_caption">
                     <h2>
                         Caption Three
@@ -82,6 +222,8 @@
             <span class="dot"></span>
         </div>
     </div>
+
+
     <!-- SLide show ends here -->
 
 
@@ -229,7 +371,7 @@
         <h2 class="section-title text-center">About Us</h2>
         <div class=" container text-center ml-auto">
 
-            <svg width="310" height="30" xmlns="http://www.w3.org/2000/svg">
+            <svg width="250" height="30" xmlns="http://www.w3.org/2000/svg">
                 <!-- <line class="text-center" x1="-50%" y1="0" x2="10%" y2="0" stroke="#05BA8E" /> -->
                 <path d="M 10 10 L 300 10" stroke="#05BA8E" />
 
@@ -299,51 +441,55 @@
 
             <div class="card col-lg-3 col-sm-12 col-md-6 team-member">
                 <div style="margin: 20px 0px">
-                  <img class="img-responsive"  src="https://picsum.photos/250/310?id=1" alt="" style="min-width: 100%;">
+                    <img class="img-responsive" src="https://picsum.photos/250/310?id=1" alt=""
+                        style="min-width: 100%;">
                 </div>
                 <div class="text-center">
 
                     <h2>JOhN DOE</h2>
                     <p>Manager</p>
-                    
-                    </div>
+
+                </div>
             </div>
 
             <div class="card col-lg-3 col-sm-12 col-md-6 team-member">
                 <div style="margin: 20px 0px">
-                  <img class="img-responsive"  src="https://picsum.photos/250/310?id=4" alt="" style="min-width: 100%;">
+                    <img class="img-responsive" src="https://picsum.photos/250/310?id=4" alt=""
+                        style="min-width: 100%;">
                 </div>
                 <div class="text-center">
 
                     <h2>JOhN DOE</h2>
                     <p>Manager</p>
-                    
-                    </div>
+
+                </div>
             </div>
 
 
             <div class="card col-lg-3 col-sm-12 col-md-6 team-member">
                 <div style="margin: 20px 0px">
-                  <img class="img-responsive"  src="https://picsum.photos/250/310?id=2" alt="" style="min-width: 100%;">
+                    <img class="img-responsive" src="https://picsum.photos/250/310?id=2" alt=""
+                        style="min-width: 100%;">
                 </div>
                 <div class="text-center">
 
                     <h2>JOhN DOE</h2>
                     <p>Manager</p>
-                    
-                    </div>
+
+                </div>
             </div>
 
             <div class="card col-lg-3 col-sm-12 col-md-6 team-member">
                 <div style="margin: 20px 0px">
-                  <img class="img-responsive"  src="https://picsum.photos/250/310?id=3" alt="" style="min-width: 100%;">
+                    <img class="img-responsive" src="https://picsum.photos/250/310?id=3" alt=""
+                        style="min-width: 100%;">
                 </div>
                 <div class="text-center">
 
                     <h2>JOhN DOE</h2>
                     <p>Manager</p>
-                    
-                    </div>
+
+                </div>
             </div>
 
         </div>
@@ -355,10 +501,10 @@
     <!-- Team section ends here -->
 
 
-     <!-- Pricing Section -->
+    <!-- Pricing Section -->
 
 
-     <div class="container pricing-section section-header">
+    <div class="container pricing-section section-header">
         <div class="text-center">
             <h3>Our pricing</h3>
             <svg width="200" height="20" xmlns="http://www.w3.org/2000/svg">
@@ -392,8 +538,8 @@
                     <h2>Basic</h2>
                     <p>Nique porriqua tquises dolorem desumquia doloresamet consectet adipisci. Masagni dolores eoquie
                         voluptate sequi saliquam quaerat voluptate.</p>
-                        <p><button class="btn btn-lg">Order now</button></p>
-                    </div>
+                    <p><button class="btn btn-lg">Order now</button></p>
+                </div>
             </div>
 
             <div class="card col-lg-3 col-sm-12 col-md-6">
@@ -406,8 +552,8 @@
                     <h2>Silver</h2>
                     <p>Nique porriqua tquises dolorem desumquia doloresamet consectet adipisci. Masagni dolores eoquie
                         voluptate sequi saliquam quaerat voluptate.</p>
-                        <p><button class="btn btn-lg">Order now</button></p>
-                    </div>
+                    <p><button class="btn btn-lg">Order now</button></p>
+                </div>
             </div>
             <div class="card col-lg-3 col-sm-12 col-md-6">
                 <div class="text-center ml-auto mr-auto pricing">
@@ -419,8 +565,8 @@
                     <h2>Gold</h2>
                     <p>Nique porriqua tquises dolorem desumquia doloresamet consectet adipisci. Masagni dolores eoquie
                         voluptate sequi saliquam quaerat voluptate.</p>
-                        <p><button class="btn btn-lg">Order now</button></p>
-                    </div>
+                    <p><button class="btn btn-lg">Order now</button></p>
+                </div>
             </div>
 
             <div class="card col-lg-3 col-sm-12 col-md-6">
@@ -430,13 +576,13 @@
 
                 <div class="text-center">
 
-                    
+
                     <p>per month</p>
                     <h2>Platinum</h2>
                     <p>Nique porriqua tquises dolorem desumquia doloresamet consectet adipisci. Masagni dolores eoquie
                         voluptate sequi saliquam quaerat voluptate.</p>
-                        <p><button class="btn btn-lg">Order now</button></p>
-                    </div>
+                    <p><button class="btn btn-lg">Order now</button></p>
+                </div>
             </div>
 
         </div>
@@ -444,7 +590,6 @@
     </div>
 
     <!-- Pricing container ends here  -->
-
 
     <!-- Please Subscribe My Youtube Channel
     https://www.youtube.com/channel/UCQM5ye1xR4vJgtga0ryud2Q/

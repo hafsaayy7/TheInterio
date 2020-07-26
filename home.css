@@ -500,3 +500,15 @@ ul.social-footer2 li a {
   text-decoration: none;
   color: white;
 }
+
+
+
+.login-signup-form{
+  max-width: 20%;
+}
+
+.btn-style{
+  color: white;
+  background-color: #00cca3;
+  width: 100px;
+}
