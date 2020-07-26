@@ -237,19 +237,16 @@ img {
   color: #00cca3;
 }
 
-
-.price-card-container{
-  margin : 20px 0
+.price-card-container {
+  margin: 20px 0;
 }
-.team-member{
-   background-color: #BEBEBE;;
+.team-member {
+  background-color: #bebebe;
 }
 
-
-.pricing{
-  
+.pricing {
   margin: 10px 0;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -257,48 +254,40 @@ img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-
-  
 }
 
-.pricing span{
+.pricing span {
   font-size: 24px;
   font-weight: bolder;
   /* border-bottom: 2px dashed black; */
- }
+}
 
- .card h2{
-   text-transform: uppercase;
-   font-weight: 600;
- }
- button{
-   background-color: #00cca3;
-   color: white;
- }
+.card h2 {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+button {
+  background-color: #00cca3;
+  color: white;
+}
 
+.testimonial {
+  background-color: black;
+  /* margin-bottom: 30px; */
+}
 
- .testimonial{
-   background-color: black;
-   /* margin-bottom: 30px; */
- }
+.contact-us {
+  /* background-color: grey; */
+  background: #d2d2d2;
+  padding: 40px 0px;
+}
 
- .contact-us{
-   /* background-color: grey; */
-   background: #D2D2D2;
-   padding: 40px 0px;
- }
-
- .contact-us h2 span{
-   border-bottom: 3px solid #00cca3;
-  }
-  .contact-us h2{
-
-    margin: 20px 0;
-  }
-
-
-
-
+.contact-us h2 span {
+  border-bottom: 3px solid #00cca3;
+}
+.contact-us h2 {
+  margin: 20px 0;
+}
 
 /* Footer */
 
@@ -484,31 +473,12 @@ ul.social-footer2 li a {
   text-decoration: underline;
 }
 
-#ft_reg_btn {
-  color: #000000;
+.login_window_model {
+  padding: 50px;
+  height: 60vh;
 }
 
-#ft_reg_btn:hover {
-  color: #00cca3;
-}
-
-.ft_email {
-  color: #00cca3;
-}
-
-.ft_email:hover {
-  text-decoration: none;
-  color: white;
-}
-
-
-
-.login-signup-form{
-  max-width: 20%;
-}
-
-.btn-style{
-  color: white;
-  background-color: #00cca3;
-  width: 100px;
+.signup_window_model {
+  padding: 50px;
+  height: 67vh;
 }

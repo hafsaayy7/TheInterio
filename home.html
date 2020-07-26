@@ -12,7 +12,7 @@
     <script src="./slideshow.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-3.5.1.js" ></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
 
     <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" /> -->
@@ -25,43 +25,22 @@
 
     <script>
         $(function () {
-            $("#test").click(function () {
-                $(".test").modal('show');
+            $(".login_window_button").click(function () {
+                $(".login_window_model").modal('show');
             });
-            $(".test").modal({
+            $(".login_window_model").modal({
                 closable: true
             });
         });
         $(function () {
-            $("#login").click(function () {
-                $(".login").modal('show');
+            $(".signup_window_button").click(function () {
+                $(".signup_window_model").modal('show');
             });
-            $(".login").modal({
+            $(".signup_window_model").modal({
                 closable: true
             });
         });
-        
-        $(function () {
-            $("#signup").click(function () {
-                $(".signup").modal('show');
-            });
-            $(".signup").modal({
-                closable: true
-            });
-        });
-        $(function () {
-            $("#signup2").click(function () {
-                $(".signup2").modal('show');
-            });
-            $(".signup2").modal({
-                closable: true
-            });
-        });
-
-
-       
     </script>
-
 
 </head>
 
@@ -77,20 +56,35 @@
             <li><a href="#home">Page 1</a></li>
             <li><a href="#home">Page 2</a></li>
             <li><a href="#home">Page 3</a></li>
-            <li><a href="#home">Page 4</a></li>
-            <li><a href="#home">Page 5</a></li>
+            <li><a href="#home" class="login_window_button">Login</a></li>
+            <li><a href="ContactFrom_v10/ContactFrom_v10/index.html">Contact</a></li>
 
         </div>
     </div>
-    
 
-    <a class="ui button primary" id="test">
-        Login </a>
-    <div class="ui modal test login login-signup-form">
+
+
+
+
+    <html>
+
+    <head>
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet"
+            type="text/css" />
+        <link
+            href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css"
+            rel="stylesheet" type="text/css" />
+        <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+        <script
+            src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
+        <meta charset="utf-8">
+    </head>
+
+
+    <div class="ui modal test login_window_model">
         <div class="ui middle aligned center aligned grid">
             <div class="column">
                 <h2 class="ui blue image header">
-                    <img src="assets/images/logo.png" class="image">
                     <div class="content">
                         Log-in to your account
                     </div>
@@ -114,29 +108,27 @@
                 </form>
 
                 <div class="ui message">
-                    New to us? <a id="signup2" href="#">Sign Up</a>
+                    New to us? <a href="#home" class="signup_window_button">Sign Up</a>
                 </div>
             </div>
         </div>
     </div>
-
-
-    <!-- another example -->
-    <a class="ui button primary" id="signup">
-        Sign up </a>
-
-
-    <div class="ui modal signup signup2 login-signup-form">
+    <div class="ui modal test signup_window_model">
         <div class="ui middle aligned center aligned grid">
             <div class="column">
                 <h2 class="ui blue image header">
-                    <img src="assets/images/logo.png" class="image">
                     <div class="content">
-                        signup to your account
+                        Sign-up now
                     </div>
                 </h2>
                 <form class="ui large form">
                     <div class="ui  segment">
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input type="text" name="username" placeholder="Username">
+                            </div>
+                        </div>
                         <div class="field">
                             <div class="ui left icon input">
                                 <i class="user icon"></i>
@@ -149,12 +141,12 @@
                                 <input type="password" name="password" placeholder="Password">
                             </div>
                         </div>
-                        <div class="ui fluid large primary submit button">Signup</div>
+                        <div class="ui fluid large primary submit button">Login</div>
                     </div>
                 </form>
 
                 <div class="ui message">
-                    Already registered? <a id="login" href="#">Sign in</a>
+                    Have an account? <a href="#" class="login_window_button">Login in</a>
                 </div>
             </div>
         </div>
@@ -162,21 +154,18 @@
 
 
 
-   
 
 
-
-    
 
 
     <!--    Slideshoe div-->
-   
-     <div class="slideshow-container">
+
+    <div class="slideshow-container">
 
         <div class="mySlides fade">
             <img src="https://picsum.photos/800/300?id=1">
-             <!-- Hre i am implementing caption above image in carousel or slider ... in bootstrap we call it carousel  -->
-    <div class="text">
+            <!-- Hre i am implementing caption above image in carousel or slider ... in bootstrap we call it carousel  -->
+            <div class="text">
                 <div class="text_caption">
                     <h2>
                         Caption Three
@@ -187,10 +176,10 @@
             </div>
         </div>
 
-    <div class="mySlides fade">
+        <div class="mySlides fade">
             <img src="https://picsum.photos/800/300?id=2">
-    <!-- Hre i am implementing caption above image in carousel or slider ... in bootstrap we call it carousel  -->
-    <div class="text">
+            <!-- Hre i am implementing caption above image in carousel or slider ... in bootstrap we call it carousel  -->
+            <div class="text">
                 <div class="text_caption">
                     <h2>
                         Caption Three
@@ -201,12 +190,12 @@
             </div>
         </div>
 
-    <div class="mySlides fade">
+        <div class="mySlides fade">
             <img src="https://picsum.photos/800/300?id=2">
 
 
-    <!-- Hre i am implementing caption above image in carousel or slider ... in bootstrap we call it carousel  -->
-    <div class="text">
+            <!-- Hre i am implementing caption above image in carousel or slider ... in bootstrap we call it carousel  -->
+            <div class="text">
                 <div class="text_caption">
                     <h2>
                         Caption Three
@@ -250,7 +239,6 @@
     <!-- OUr servces Start here -->
 
     <div class="section-header">
-        <!-- wel will define css for this later -->
         <h2 class="section-title text-center">Our Services</h2>
         <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget risus vitae massa
             <br> semper aliquam quis mattis quam.</p>
