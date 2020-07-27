@@ -1,6 +1,10 @@
 * {
   margin: 0;
 }
+form span{
+  color:red;
+  margin: 5px;
+}
 
 #top_div {
   display: flex;

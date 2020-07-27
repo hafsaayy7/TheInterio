@@ -24,9 +24,22 @@
         src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
 
     <script>
+        var selected_button = '';
+        var username_validated = false;
+        var email_validated = false;
+        var password_validated = false;
+        var confirm_password_validated = false;
+        var firstname_validated = false;
+        var lastname_validated = false;
+
+
+        // document.getElementById('signup_btn').disabled = true;
+
+
         $(function () {
             $(".login_window_button").click(function () {
                 $(".login_window_model").modal('show');
+                selected_button = "login";
             });
             $(".login_window_model").modal({
                 closable: true
@@ -35,11 +48,173 @@
         $(function () {
             $(".signup_window_button").click(function () {
                 $(".signup_window_model").modal('show');
+                selected_button = "signup";
             });
             $(".signup_window_model").modal({
                 closable: true
             });
         });
+
+
+
+        function username_validation(id, error_id) {
+            var value = document.getElementById(id).value;
+            var pattern = new RegExp("^[a-zA-Z][0-9a-zA-Z]{3,}$");
+            console.log(value)
+            if (!pattern.test(value)) {
+                document.getElementById(error_id).innerHTML = "* Enter correct user-name ";
+                username_validated = false;
+
+                // alert('Username is Valid')
+            } else {
+                // alert('Username is invalid')
+                document.getElementById(error_id).innerHTML = "";
+                username_validated = true;
+                document.getElementById(id).blur();
+                check_signup_validation();
+
+                // document.getElementById("t1").focus();
+            }
+        }
+
+        function email_validation(id, error_id) {
+            var value = document.getElementById(id).value;
+            // var pattern = new RegExp("^[a-z0-9](\.?[a-z0-9]){5,}@g(oogle)?mail\.com$");
+            var pattern = new RegExp("^([a-zA-Z0-9]+)@([a-zA-Z]+)\.([a-zA-Z]{2,5})$");
+            if (!pattern.test(value)) {
+
+                document.getElementById(error_id).innerHTML = "* Enter correct email-address ";
+                email_validated = false;
+            } else {
+                document.getElementById(error_id).innerHTML = "";
+                email_validated = true;
+                document.getElementById(id).blur();
+                if (selected_button == "login") {
+                    check_signin_validation();
+
+                } else if (selected_button == "signup") {
+
+                    check_signup_validation();
+                }
+
+
+            }
+        }
+
+        function password_validation(password_id, error_id) {
+            var value = document.getElementById(password_id).value;
+            var pattern = new RegExp("^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$"); //regex to check for at least 8 bcharacter and special characters
+
+            if (!pattern.test(value)) {
+                document.getElementById(error_id).innerHTML = "Password must be at least 8 character long ,must include capital letter";
+                password_validated = false;
+
+
+            } else {
+                document.getElementById(error_id).innerHTML = "";
+                password_validated = true;
+                document.getElementById(password_id).blur();
+
+                if (selected_button == "login") {
+                    check_signin_validation();
+
+                } else if (selected_button == "signup") {
+
+                    check_signup_validation();
+                }
+
+
+
+
+            }
+
+        }
+
+        function confirm_password_validation(password_id, confirm_password_id, error_id) {
+            var password_value = document.getElementById(password_id).value;
+
+            var confirm_password_value = document.getElementById(confirm_password_id).value;
+
+            if (confirm_password_value != password_value) {
+
+                document.getElementById(error_id).innerHTML = "\nPassword did not match: Please try again...";
+                confirm_password_validated = false;
+            }
+            else {
+                document.getElementById(error_id).innerHTML = "";
+                confirm_password_validated = true;
+                document.getElementById(confirm_password_id).blur();
+
+                check_signup_validation();
+
+
+            }
+
+            // return false; 
+        }
+
+        function check_signup_validation() {
+            console.log(selected_button);
+            if (username_validated & password_validated & confirm_password_validated & email_validated & firstname_validated & lastname_validated) {
+                document.getElementById('signup_btn_id').disabled = false;
+
+                // return true;
+            } else {
+                document.getElementById('signup_btn_id').disabled = true;
+            }
+        }
+
+        function check_signin_validation() {
+            console.log(selected_button);
+            if (password_validated & email_validated) {
+                document.getElementById('sign_in_id').disabled = false;
+
+                // return true;
+            } else {
+                document.getElementById('sign_in_id').disabled = true;
+            }
+        }
+
+        function lastname_validation(field_id, error_id) {
+
+            var value = document.getElementById(field_id).value;
+
+            var pattern = new RegExp("^[a-zA-z]{3,}$"); //three words for a last name
+
+            if (!pattern.test(value) & value != "") {
+                lastname_validated = false;
+
+                document.getElementById(error_id).innerHTML = "invalid last name. at least three charactor or no character "
+            }
+            else {
+                lastname_validated = true;
+                document.getElementById(error_id).innerHTML = "";
+            }
+
+        }
+
+        function name_validation(name_field_id, error_id) {
+            var my_regex = new RegExp("^[a-zA-z]{3,}$")
+
+            var name_value = document.getElementById(name_field_id).value
+
+            if (!my_regex.test(name_value)) {
+                firstname_validated = false;
+                document.getElementById(error_id).innerHTML = " Enter valid name of at least 3 character";
+            } else {
+                firstname_validated = true;
+                document.getElementById(error_id).innerHTML = ""
+                check_signup_validation();
+            }
+        }
+
+
+
+
+
+
+
+
     </script>
 
 </head>
@@ -62,12 +237,6 @@
         </div>
     </div>
 
-
-
-
-
-
-
     <head>
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet"
             type="text/css" />
@@ -80,7 +249,6 @@
         <meta charset="utf-8">
     </head>
 
-
     <div class="ui modal test login_window_model">
         <div class="ui middle aligned center aligned grid">
             <div class="column">
@@ -89,21 +257,26 @@
                         Log-in to your account
                     </div>
                 </h2>
-                <form class="ui large form">
+                <form class="ui large form" method="POST" action="./login.php">
                     <div class="ui  segment">
                         <div class="field">
                             <div class="ui left icon input">
                                 <i class="user icon"></i>
-                                <input type="text" name="email" placeholder="E-mail address">
+                                <input id="email_id" type="text" name="email" placeholder="E-mail address"
+                                    onchange="email_validation('email_id', 'email_error')">
+                                <span id="email_error"></span>
                             </div>
                         </div>
                         <div class="field">
                             <div class="ui left icon input">
                                 <i class="lock icon"></i>
-                                <input type="password" name="password" placeholder="Password">
+                                <input id="signin_password_id" type="password" name="password" placeholder="Password"
+                                    onchange="password_validation('signin_password_id', 'password_error')">
+                                <span id="password_error"></span>
                             </div>
                         </div>
-                        <div class="ui fluid large primary submit button">Login</div>
+                        <div><button id="sign_in_id" class="ui fluid large primary submit button" disabled type="submit">Login
+                            </button></div>
                     </div>
                 </form>
 
@@ -121,27 +294,68 @@
                         Sign-up now
                     </div>
                 </h2>
-                <form class="ui large form">
+                <form class="ui large form" method="POST" action="signup.php">
                     <div class="ui  segment">
                         <div class="field">
                             <div class="ui left icon input">
-                                <i class="user icon"></i>
-                                <input type="text" name="username" placeholder="Username">
+                                <input id="name_field_id" type="text" name="firstnamefield" value=""
+                                    placeholder="Enter First Name"
+                                    onchange="name_validation('name_field_id' , 'name_error')" required>
+                                <span id="name_error"></span>
                             </div>
                         </div>
+
+
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <input id="last_name_field_id" type="text" name="lastnamefield" value=""
+                                    placeholder="Enter Last Name"
+                                    onchange="lastname_validation('last_name_field_id', 'lastname_error')">
+                                <span id="lastname_error"></span>
+                            </div>
+                        </div>
+
                         <div class="field">
                             <div class="ui left icon input">
                                 <i class="user icon"></i>
-                                <input type="text" name="email" placeholder="E-mail address">
+                                <input id="name_value" type="text" name="usernamefield" placeholder="Username"
+                                    onchange="username_validation('name_value' , 'username_error')">
+                                <span id="username_error"></span>
                             </div>
                         </div>
+
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input id="email_input" type="text" name="emailfield" placeholder="E-mail address"
+                                    onchange="email_validation('email_input' , 'signup_email_error')">
+                                <span id="signup_email_error"></span>
+                            </div>
+                        </div>
+
                         <div class="field">
                             <div class="ui left icon input">
                                 <i class="lock icon"></i>
-                                <input type="password" name="password" placeholder="Password">
+                                <input id="password_input" type="password" name="password" placeholder="Password"
+                                    onchange="password_validation('password_input', 'signup_password_error')">
+                                <span id="signup_password_error"></span>
                             </div>
                         </div>
-                        <div class="ui fluid large primary submit button">Login</div>
+
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="lock icon"></i>
+                                <input id="confirm_password_input" type="password" name="confirm_password"
+                                    placeholder="Confirm Password"
+                                    onchange="confirm_password_validation('password_input','confirm_password_input', 'confirm_password_error')">
+                                <span id="confirm_password_error"></span>
+                            </div>
+                        </div>
+
+                        <div><button id="signup_btn_id" type="submit" disabled
+                                class="ui fluid large primary submit button btn btn-large">Sign up</button>
+                        </div>
+
                     </div>
                 </form>
 
