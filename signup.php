@@ -1,5 +1,11 @@
 <?php
 
+
+// we will write db quesry here fro unique user name 
+//  select username from whatever table we have where tabkename.username == $username;
+
+// if we getr null result it means username already exists
+
 $users = array(
     array(
         "user_name" =>"shahidbangash" ,
@@ -49,6 +55,8 @@ $users = array(
         return "false";
     }
 
+    // Above function can help you to find user name from given result
+
     
     if (isset($_REQUEST['submit'])){
 
@@ -58,9 +66,23 @@ $users = array(
     $first_name = $_REQUEST['firstnamefield'];
     $last_name = $_REQUEST['lastnamefield'];
 
+
+    // write database query  here 
+
+    header("Location: afterlogin.php");
+
     }
     else{
+
+        // else part of your code 
+
+        // i have not deleted some of old code .. in case if you need to modify it 
+
+        // example of db query as a guide for you 
+        
+
         echo 'Sign up not successful';
+        header("Location: home.html");
 
         
     }
