@@ -133,16 +133,20 @@
         <div id="active_orders" class="tabcontent">
             <h3>total orders number</h3>
             <p>Sorry You dont have any orders</p>
+            <!-- this is default structure  -->
+            <!-- we will db query and rsult will be displayed using dom  -->
         </div>
-
+        
         <div id="completed_orders" class="tabcontent">
             <h3>total number of completed orders</h3>
             <p>Sorry You dont have any completed orders</p>
+            <!-- we will db query and rsult will be displayed using dom  -->
         </div>
-
+        
         <div id="cancelled_orders" class="tabcontent">
             <h3>total cancel orders</h3>
             <p>Sorry You dont have any cancelled orders</p>
+            <!-- we will db query and rsult will be displayed using dom  -->
         </div>
 
     </div>
