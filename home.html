@@ -103,7 +103,7 @@
 
         function password_validation(password_id, error_id) {
             var value = document.getElementById(password_id).value;
-            var pattern = new RegExp("^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$"); //regex to check for at least 8 bcharacter and special characters
+            var pattern = new RegExp("^[a-zA-Z0-9]*$"); //regex to check for at least 8 bcharacter and special characters
 
             if (!pattern.test(value)) {
                 document.getElementById(error_id).innerHTML = "Password must be at least 8 character long ,must include capital letter";
@@ -165,7 +165,6 @@
         }
 
         function check_signin_validation() {
-            console.log(selected_button);
             if (password_validated & email_validated) {
                 document.getElementById('sign_in_id').disabled = false;
 
@@ -228,8 +227,8 @@
 
             <!-- inser more links here -->
 
-            <li><a href="#home">Page 1</a></li>
-            <li><a href="#home">Page 2</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#home">Hire Us</a></li>
             <li><a href="./blog.html">Blog</a></li>
             <li><a href="#home" class="login_window_button">Login</a></li>
             <li><a href="ContactFrom_v10/ContactFrom_v10/index.html">Contact</a></li>
@@ -257,13 +256,13 @@
                         Log-in to your account
                     </div>
                 </h2>
-                <form class="ui large form" method="POST" action="./login.php">
+                <form class="ui large form" method="POST" action="http://localhost/TheInterio/PHP/login.php">
                     <div class="ui  segment">
                         <div class="field">
                             <div class="ui left icon input">
                                 <i class="user icon"></i>
                                 <input id="email_id" type="text" name="email" placeholder="E-mail address"
-                                    onchange="email_validation('email_id', 'email_error')">
+                                    required="required" pattern="^([a-zA-Z0-9]+)@([a-zA-Z]+)\.([a-zA-Z]{2,5})$">
                                 <span id="email_error"></span>
                             </div>
                         </div>
@@ -271,11 +270,11 @@
                             <div class="ui left icon input">
                                 <i class="lock icon"></i>
                                 <input id="signin_password_id" type="password" name="password" placeholder="Password"
-                                    onchange="password_validation('signin_password_id', 'password_error')">
+                                    required="required" pattern="^[a-zA-Z0-9]*$">
                                 <span id="password_error"></span>
                             </div>
                         </div>
-                        <div><button id="sign_in_id" class="ui fluid large primary submit button" disabled
+                        <div><button id="sign_in_id" class="ui fluid large primary submit button"
                                 type="submit">Login
                             </button></div>
                     </div>
@@ -295,13 +294,13 @@
                         Sign-up now
                     </div>
                 </h2>
-                <form class="ui large form" method="POST" action="signup.php">
+                <form class="ui large form" method="POST" action="http://localhost/TheInterio/PHP/signup.php">
                     <div class="ui  segment">
                         <div class="field">
                             <div class="ui left icon input">
                                 <input id="name_field_id" type="text" name="firstnamefield" value=""
                                     placeholder="Enter First Name"
-                                    onchange="name_validation('name_field_id' , 'name_error')" required>
+                                    required="required" pattern="^[a-zA-z]{3,}$">
                                 <span id="name_error"></span>
                             </div>
                         </div>
@@ -311,7 +310,7 @@
                             <div class="ui left icon input">
                                 <input id="last_name_field_id" type="text" name="lastnamefield" value=""
                                     placeholder="Enter Last Name"
-                                    onchange="lastname_validation('last_name_field_id', 'lastname_error')">
+                                    required="required" pattern="^[a-zA-z]{3,}$">
                                 <span id="lastname_error"></span>
                             </div>
                         </div>
@@ -320,7 +319,7 @@
                             <div class="ui left icon input">
                                 <i class="user icon"></i>
                                 <input id="name_value" type="text" name="usernamefield" placeholder="Username"
-                                    onchange="username_validation('name_value' , 'username_error')">
+                                    required="required" pattern="^[a-zA-Z][0-9a-zA-Z]{3,}$">
                                 <span id="username_error"></span>
                             </div>
                         </div>
@@ -329,7 +328,7 @@
                             <div class="ui left icon input">
                                 <i class="user icon"></i>
                                 <input id="email_input" type="text" name="emailfield" placeholder="E-mail address"
-                                    onchange="email_validation('email_input' , 'signup_email_error')">
+                                    required="required" pattern="^([a-zA-Z0-9]+)@([a-zA-Z]+)\.([a-zA-Z]{2,5})$">
                                 <span id="signup_email_error"></span>
                             </div>
                         </div>
@@ -337,8 +336,7 @@
                         <div class="field">
                             <div class="ui left icon input">
                                 <i class="lock icon"></i>
-                                <input id="password_input" type="password" name="password" placeholder="Password"
-                                    onchange="password_validation('password_input', 'signup_password_error')">
+                                <input id="password_input" type="password" name="password" placeholder="Password" required="required" pattern="^[a-zA-Z0-9]*$">
                                 <div>
                                     <span id="signup_password_error"></span>
                                 </div>
@@ -350,14 +348,14 @@
                                 <i class="lock icon"></i>
                                 <input id="confirm_password_input" type="password" name="confirm_password"
                                     placeholder="Confirm Password"
-                                    onchange="confirm_password_validation('password_input','confirm_password_input', 'confirm_password_error')">
+                                     required="required" pattern="^[a-zA-Z0-9]*$">
                                 <div>
                                     <span id="confirm_password_error"></span>
                                 </div>
                             </div>
                         </div>
 
-                        <div><button id="signup_btn_id" type="submit" disabled
+                        <div><button id="signup_btn_id" type="submit"
                                 class="ui fluid large primary submit button btn btn-large">Sign up</button>
                         </div>
 
