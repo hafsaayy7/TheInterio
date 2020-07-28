@@ -7,50 +7,82 @@
 $connect = mysqli_connect("localhost", "root", "", "theinterior");
 function make_query($connect)
 {
-    $query = "SELECT * FROM images";
-    $result = mysqli_query($connect, $query);
-    return $result;
+ $query = "SELECT * FROM images";
+ $result = mysqli_query($connect, $query);
+ return $result;
 }
 
 function make_slide_indicators($connect)
 {
-    $output = '';
-    $count = 0;
-    $result = make_query($connect);
-    while ($row = mysqli_fetch_array($result)) {
-        if ($count == 0) {
-            $output .= '
-   <li data-target="#dynamic_slide_show" data-slide-to="' . $count . '" class="active"></li>
+ $output = ''; 
+ $count = 0;
+ $result = make_query($connect);
+ while($row = mysqli_fetch_array($result))
+ {
+  if($count == 0)
+  {
+   $output .= '
+   <li data-target="#dynamic_slide_show" data-slide-to="'.$count.'" class="active"></li>
    ';
-        } else {
-            $output .= '
-   <li data-target="#dynamic_slide_show" data-slide-to="' . $count . '"></li>
+  }
+  else
+  {
+   $output .= '
+   <li data-target="#dynamic_slide_show" data-slide-to="'.$count.'"></li>
    ';
-        }
-        $count = $count + 1;
-    }
-    return $output;
+  }
+  $count = $count + 1;
+ }
+ return $output;
 }
 
 function make_slides($connect)
 {
-    $output = '';
-    $count = 0;
-    $result = make_query($connect);
-    while ($row = mysqli_fetch_array($result)) {
-        if ($count == 0) {
-            $output .= '<div class="item active">';
-        } else {
-            $output .= '<div class="item">';
-        }
-        $output .= '
-   <img src="images/' . $row["image"] . '" alt="'  . '" />
+ $output = '';
+ $count = 0;
+ $result = make_query($connect);
+ while($row = mysqli_fetch_array($result))
+ {
+  if($count == 0)
+  {
+   $output .= '<div class="item active">';
+  }
+  else
+  {
+   $output .= '<div class="item">';
+  }
+  $output .= '
+   <img src="images/'.$row["image"].'" alt="'.$row["image_text"].'" />
+
   </div>
   ';
-        $count = $count + 1;
-    }
-    return $output;
+  $count = $count + 1;
+ }
+ return $output;
 }
+
+// function team_user($connect){
+//     unset($output);
+//     $checking_out = '';
+//     $count = 0;
+//     $result_team_users = mysqli_query($connect, "SELECT * FROM team");
+//     while ($row = mysqli_fetch_array($result_team_users)) {
+
+// $output .= '<div class="item active">';
+// $checking_out .= '<img class="img-responsive" src="images/'.$row['picture'] . ' />"' . '</div>  <div class="text-center">  <h2>' . $row['name'] . '</h2> <p>' . $row['role'] . '</p>' . '</div>
+// </div>';
+
+
+//         $output .= '
+//    <img src="images/' . $row["image"] . '" alt="'  . '" />
+//   </div>
+//   ';
+//         $count = $count + 1;
+//     }
+
+//     return $checking_out;
+
+// }
 
 ?>
 
@@ -64,7 +96,7 @@ function make_slides($connect)
     <!-- Adding bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
-    
+
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
     <script src="https://kit.fontawesome.com/d40bc104d7.js" crossorigin="anonymous"></script>
     <!--Adding font aswome icons CDN-->
@@ -268,7 +300,7 @@ function make_slides($connect)
 
 </head>
 
-<body onload="showSlides()">
+<body>
     <div id="top_div">
         <div id="title-div">
             <h3>The Interiors</h3>
@@ -404,15 +436,10 @@ function make_slides($connect)
     </div>
 
 
-
-
-
-
-
     <!--    Slideshoe div-->
 
     <div class="container-fluid">
-       
+
         <br />
         <div id="dynamic_slide_show" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -435,9 +462,6 @@ function make_slides($connect)
         </div>
     </div>
 
-
-
-
     <!-- SLide show ends here -->
 
 
@@ -447,9 +471,7 @@ function make_slides($connect)
             <div class="row">
                 <div class="col-sm-9">
                     <h2>BRIGHT the best Interior Designs</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget risus vitae massa semper
-                        aliquam quis mattis quam. Morbi vitae tortor tempus, placerat leo et, suscipit lectus. Phasellus
-                        ut euismod massa, eu eleifend ipsum.
+                    <p style="font-size: 16px; margin-bottom: 10px;">We believe detail is our success story. The insides of our kitchens are made of 100% pure material. This gives them the highest level of stability and resilience. High-quality material, outstanding kitchen design and innovative technologies ensure that Shaze’ will last a lifetime. The ingredients as well as material on which they are prepared all have key role to play in creating a thoroughly successful meal. Many different kitchen designs give you huge scope when choosing your kitchen design idea and you will want your kitchen to stay looking as good as the day it was installed.
                     </p>
                 </div>
                 <div class="col-sm-3 text-right">
@@ -463,9 +485,9 @@ function make_slides($connect)
 
     <!-- OUr servces Start here -->
 
-    <div class="section-header">
+    <div id="services" class="section-header">
         <h2 class="section-title text-center">Our Services</h2>
-        <p class="text-center">We provide service in following categories.</p>
+        <p class="text-center">We Offer Complete Interior Design Consultancy with Turnkey Execution.</p>
     </div>
 
     <div class="container">
@@ -522,7 +544,7 @@ function make_slides($connect)
                 <div class="service-box">
                     <div class="hexagon">
                         <div class="inner">
-                        <i class="fa fa-building" aria-hidden="true"></i>
+                            <i class="fa fa-building" aria-hidden="true"></i>
                         </div>
                     </div>
                     <div class="media-body">
@@ -565,7 +587,7 @@ function make_slides($connect)
                         <!-- <p>Morbi vitae tortor tempus, placerat leo et, suscipit lectus. Phasellus ut euismod massa, eu
                             eleifend ipsum.</p> -->
                     </div>
-                </div>  
+                </div>
             </div>
 
 
@@ -574,7 +596,6 @@ function make_slides($connect)
     </div>
 
     <!-- OUr services section ends here -->
-
 
     <!-- About Us Section starts here  -->
 
@@ -590,15 +611,16 @@ function make_slides($connect)
                     color the line will not be visible -->
             </svg>
         </div>
-        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget risus vitae massa
-            <br> semper aliquam quis mattis quam.</p>
+        <p class="container text-center">Theinteriors is a Islamabad based company dedicated to providing our clients with creative concepts, high quality interior design or kitchen design and flawless execution. We tailor each project to our client’s individual taste. We are a team of skilled interior designers in Islamabad and craftsmen. We pride ourselves on listening to our clients, working with them side-by-side, and paying fine attention to detail.
+
+            In the kitchen every centimeter counts. You will find all you need to make your kitchen and home spaces completely luxurious. The combination of different materials could add a more contemporary look. the goal of our kitchen designers in Islamabad is to create end results that are as unique and wonderful as our clients..</p>
     </div>
 
     <div class="container section-header">
 
         <div class="row">
             <div class="col-sm-6 wow" style="visibility: visible; animation-name: fadeInLeft;">
-                <img class="img-responsive" src="https://picsum.photos/510/390?id=1" alt="">
+                <img class="img-responsive" src="images\group of architect.jpg" alt="">
             </div>
 
             <div class="col-sm-6">
@@ -620,23 +642,19 @@ function make_slides($connect)
     <div class="container pricing-section section-header">
         <div class="text-center">
             <h3>Our Best Team</h3>
-            <svg width="150" height="20" xmlns="http://www.w3.org/2000/svg">
+            <svg width="150" height="10" xmlns="http://www.w3.org/2000/svg">
 
                 <path d="M 10 10 L 300 10" stroke="#05BA8E" />
             </svg>
 
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum, excepturi! Fuga cupiditate pariatur
-                aliquam quas ut cumque.umque obcaecati nihil repudiandae quibusdam
-                amet ratione. Reprehenderit, ipsam?</p>
+            <p>Meet out</p>
 
         </div>
 
     </div>
 
 
-
-
-    <div class="container price-card-container">
+    <div id="team" class="container price-card-container">
 
         <div class="row">
 
@@ -644,7 +662,8 @@ function make_slides($connect)
 
             <div class="card col-lg-3 col-sm-12 col-md-6 team-member">
                 <div style="margin: 20px 0px">
-                    <img class="img-responsive" src="https://picsum.photos/250/310?id=1" alt="" style="min-width: 100%;">
+
+                    <img class="img-responsive" src="https://webthemez.com/demo/bright-interior-design-bootstrap-responsive-web-template/images/team/01.jpg" alt="" style="min-width: 100%;">
                 </div>
                 <div class="text-center">
 
@@ -656,7 +675,9 @@ function make_slides($connect)
 
             <div class="card col-lg-3 col-sm-12 col-md-6 team-member">
                 <div style="margin: 20px 0px">
-                    <img class="img-responsive" src="https://picsum.photos/250/310?id=4" alt="" style="min-width: 100%;">
+
+
+                    <img class="img-responsive" src="https://webthemez.com/demo/bright-interior-design-bootstrap-responsive-web-template/images/team/02.jpg" alt="" style="min-width: 100%;">
                 </div>
                 <div class="text-center">
 
@@ -669,7 +690,8 @@ function make_slides($connect)
 
             <div class="card col-lg-3 col-sm-12 col-md-6 team-member">
                 <div style="margin: 20px 0px">
-                    <img class="img-responsive" src="https://picsum.photos/250/310?id=2" alt="" style="min-width: 100%;">
+
+                    <img class="img-responsive" src="https://webthemez.com/demo/bright-interior-design-bootstrap-responsive-web-template/images/team/03.jpg" alt="" style="min-width: 100%;">
                 </div>
                 <div class="text-center">
 
@@ -681,7 +703,8 @@ function make_slides($connect)
 
             <div class="card col-lg-3 col-sm-12 col-md-6 team-member">
                 <div style="margin: 20px 0px">
-                    <img class="img-responsive" src="https://picsum.photos/250/310?id=3" alt="" style="min-width: 100%;">
+
+                    <img class="img-responsive" src="https://webthemez.com/demo/bright-interior-design-bootstrap-responsive-web-template/images/team/04.jpg" alt="" style="min-width: 100%;">
                 </div>
                 <div class="text-center">
 
@@ -706,14 +729,14 @@ function make_slides($connect)
     <div class="container pricing-section section-header">
         <div class="text-center">
             <h3>Our pricing</h3>
-            <svg width="200" height="20" xmlns="http://www.w3.org/2000/svg">
+            <svg width="200" height="10" xmlns="http://www.w3.org/2000/svg">
 
                 <path d="M 10 10 L 300 10" stroke="#05BA8E" />
             </svg>
 
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum, excepturi! Fuga cupiditate pariatur
+            <!-- <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum, excepturi! Fuga cupiditate pariatur
                 aliquam quas ut cumque. Quasi cupiditate maxime voluptatum cumque obcaecati nihil repudiandae quibusdam
-                amet ratione. Reprehenderit, ipsam?</p>
+                amet ratione. Reprehenderit, ipsam?</p> -->
 
         </div>
 
@@ -727,7 +750,7 @@ function make_slides($connect)
 
 
 
-            <div class="card col-lg-3 col-sm-12 col-md-6">
+            <div id="pricing"  class="card col-lg-3 col-sm-12 col-md-6">
                 <div class="text-center mr-auto ml-auto pricing">
                     <span>$40</span>
                 </div>
@@ -735,8 +758,13 @@ function make_slides($connect)
 
                     <p>per month</p>
                     <h2>Basic</h2>
-                    <p>Nique porriqua tquises dolorem desumquia doloresamet consectet adipisci. Masagni dolores eoquie
-                        voluptate sequi saliquam quaerat voluptate.</p>
+
+
+                    <p>Door design</p>
+                    <p>Consultation</p>
+                    <p>Garden design</p>
+
+
                     <p><button class="btn btn-lg">Order now</button></p>
                 </div>
             </div>
@@ -749,8 +777,11 @@ function make_slides($connect)
 
                     <p>per month</p>
                     <h2>Silver</h2>
-                    <p>Nique porriqua tquises dolorem desumquia doloresamet consectet adipisci. Masagni dolores eoquie
-                        voluptate sequi saliquam quaerat voluptate.</p>
+
+                    <p>floor design</p>
+                    <p>Home design</p>
+                    <p>Garden design</p>
+
                     <p><button class="btn btn-lg">Order now</button></p>
                 </div>
             </div>
@@ -761,9 +792,14 @@ function make_slides($connect)
                 <div class="text-center">
 
                     <p>per month</p>
-                    <h2>Gold</h2>
-                    <p>Nique porriqua tquises dolorem desumquia doloresamet consectet adipisci. Masagni dolores eoquie
-                        voluptate sequi saliquam quaerat voluptate.</p>
+                    <h2>Silver</h2>
+
+
+                    <p>Home design</p>
+                    <p>Garden design</p>
+                    <p>Kitchen design</p>
+
+
                     <p><button class="btn btn-lg">Order now</button></p>
                 </div>
             </div>
@@ -778,8 +814,10 @@ function make_slides($connect)
 
                     <p>per month</p>
                     <h2>Platinum</h2>
-                    <p>Nique porriqua tquises dolorem desumquia doloresamet consectet adipisci. Masagni dolores eoquie
-                        voluptate sequi saliquam quaerat voluptate.</p>
+
+                    <p>Home design</p>
+                    <p>Interior design</p>
+                    <p>Exterior design</p>
                     <p><button class="btn btn-lg">Order now</button></p>
                 </div>
             </div>
@@ -809,11 +847,11 @@ function make_slides($connect)
                         <div class="widget no-box">
                             <h5 class="widget-title">Quick Links<span></span></h5>
                             <ul class="thumbnail-widget">
-                                <li><a>Page 1</a></li>
-                                <li><a>Page 2</a></li>
-                                <li><a>Page 3</a></li>
-                                <li><a>Page 4</a></li>
-                                <li><a>Page 5</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="#pricing">Pricing</a></li>
+                                <li><a href="#services">About us</a></li>
+                                <li><a href="ContactFrom_v10/ContactFrom_v10/index.html">Contact us</a></li>
+                                <li><a href="#services">Out Services</a></li>
                             </ul>
                         </div>
                     </div>
@@ -822,7 +860,7 @@ function make_slides($connect)
                         <div class="widget no-box">
                             <h5 class="widget-title">Get Started<span></span></h5>
                             <p>Get access to your full Training and Marketing Suite.</p>
-                            <a class="btn btn-color" id="ft_reg_btn" href="#." target="_blank">Register Now</a>
+                            <a class="btn btn-color signup_window_button" id="ft_reg_btn" >Register Now</a>
                         </div>
                     </div>
 

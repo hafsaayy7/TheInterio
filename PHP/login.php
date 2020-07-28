@@ -39,6 +39,7 @@
     }
     elseif ($row['email'] == $email and $row['password'] == $password){
         echo "<h1>Logged in successfully</h1>";
+        header("Location : afterlogin.php");
     }
     else {
         echo "<h1>Invalid password</h1>";

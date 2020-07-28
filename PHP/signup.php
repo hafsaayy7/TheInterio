@@ -56,6 +56,8 @@
             $query = "INSERT INTO `theinterior`.`user` (`username`, `email`, `password`,`firstname`,`lastname`) VALUES ('$username', '$email', '$password','$firstname','$lastname')";
             mysqli_query($connection, $query);
             echo "<h1>Registered successfully!</h1>";
+
+            header("Location : afterlogin.php");
         }
     }
     ?>
