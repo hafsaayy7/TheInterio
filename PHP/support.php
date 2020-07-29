@@ -6,7 +6,7 @@
     <script src="https://kit.fontawesome.com/d40bc104d7.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css\home.css">
+    <link rel="stylesheet" href="../css\home.css">
     <title>Service request</title>
 
     <style>
@@ -78,7 +78,7 @@
     </style>
 
     <div>
-        <header class="container-fluid navbar-style">
+        <div class="container-fluid navbar-style">
             <nav class="navbar navbar-expand-lg navbar-style">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="index.html">
@@ -110,7 +110,7 @@
                     </div>
                 </div>
             </nav>
-        </header>
+        </div>
     </div>
 
 
@@ -140,7 +140,7 @@
 
 </body>
 
-<footer id="footer" class="footer-1">
+<footer id="footer" class="footer-1" style="position: absolute; bottom : 0; width : 100%">
     <div class="main-footer widgets-dark typo-light">
         <div class="container">
             <div class="row">
@@ -155,12 +155,12 @@
                 <div class="col-xs-12 col-sm-6 col-md-3">
                     <div class="widget no-box">
                         <h5 class="widget-title">Quick Links<span></span></h5>
-                        <ul <li><a href="PHP\home.php">Home</a></li>
-                            <li><a href="PHP\service.php">Hire Us</a></li>
-                            <li><a href="PHP\blog.php">Blog</a></li>
-                            <li><a href="#home" class="login_window_button">Login</a></li>
-                            <li><a href="ContactFrom_v10/ContactFrom_v10/index.html">Contact</a></li>
-
+                        <ul class="thumbnail-widget">
+                            <li><a href="../PHP\blog.php">Blog</a></li>
+                            <li><a href="../PHP\home.php#pricing">Pricing</a></li>
+                            <li><a href="../PHP\home.php#services">About us</a></li>
+                            <li><a href="../ContactFrom_v10\ContactFrom_v10\index.html">Contact us</a></li>
+                            <li><a href="../PHP\home.php#services">Out Services</a></li>
                         </ul>
                     </div>
                 </div>
@@ -206,6 +206,7 @@
         </div>
     </div>
 </footer>
+
 
 </body>
 
