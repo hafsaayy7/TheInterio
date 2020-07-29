@@ -41,7 +41,7 @@ function make_slides($connect)
             $output .= '<div class="item">';
         }
         $output .= '
-   <img src="images/' . $row["image"] . '" alt="' . $row["image_text"] . '" />
+   <img src="../images/' . $row["image"] . '" alt="' . $row["image_text"] . '" />
 
   </div>
   ';
@@ -86,7 +86,7 @@ function image_card($connect){
         $output .= '<div class="card col-lg-3 col-sm-12 col-md-6 team-member">
         <div style="margin: 20px 0px">
 
-            <img class="img-responsive" '. 'src='.'images/'.$row['name'].'style=min-width: 100%;>
+            <img class="img-responsive" '. 'src='.'../images/'.$row['name'].'style=min-width: 100%;>
         </div>
         <div class="text-center">'.'
 
@@ -104,13 +104,12 @@ return $output;
 
 ?>
 
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <title>Interiors</title>
-    <link type="text/css" href="./home.css" rel="stylesheet">
+    <link type="text/css" href="..\css\home.css" rel="stylesheet">
     <!-- Adding bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
@@ -328,10 +327,10 @@ return $output;
             <!-- inser more links here -->
 
             <li><a href="home.php">Home</a></li>
-            <li><a href="./PHP/service.php">Hire Us</a></li>
-            <li><a href="./blog.html">Blog</a></li>
-            <li><a href="#home" class="login_window_button">Login</a></li>
-            <li><a href="ContactFrom_v10/ContactFrom_v10/index.html">Contact</a></li>
+            <li><a href="service.php">Hire Us</a></li>
+            <li><a href="blog.php">Blog</a></li>
+            <li><a href="#" class="login_window_button">Login</a></li>
+            <li><a href="..\ContactFrom_v10\ContactFrom_v10\index.html">Contact</a></li>
 
         </div>
     </div>
@@ -352,7 +351,7 @@ return $output;
                         Log-in to your account
                     </div>
                 </h2>
-                <form class="ui large form" method="POST" action="http://localhost/TheInterio/PHP/login.php">
+                <form class="ui large form" method="POST" action="login.php">
                     <div class="ui  segment">
                         <div class="field">
                             <div class="ui left icon input">
@@ -544,9 +543,11 @@ return $output;
 
     <div class="container section-header">
 
+    <!-- Our group -->
+
         <div class="row">
             <div class="col-sm-6 wow" style="visibility: visible; animation-name: fadeInLeft;">
-                <img class="img-responsive" src="images\group of architect.jpg" alt="">
+                <img class="img-responsive" src="../images\group of architect.jpg" alt="">
             </div>
 
             <div class="col-sm-6">
@@ -721,11 +722,11 @@ return $output;
                         <div class="widget no-box">
                             <h5 class="widget-title">Quick Links<span></span></h5>
                             <ul class="thumbnail-widget">
-                                <li><a href="blog.html">Blog</a></li>
-                                <li><a href="#pricing">Pricing</a></li>
-                                <li><a href="#services">About us</a></li>
-                                <li><a href="ContactFrom_v10/ContactFrom_v10/index.html">Contact us</a></li>
-                                <li><a href="#services">Out Services</a></li>
+                                <li><a href="../PHP\blog.php">Blog</a></li>
+                                <li><a href="../PHP\home.php#pricing">Pricing</a></li>
+                                <li><a href="../PHP\home.php#services">About us</a></li>
+                                <li><a href="../ContactFrom_v10\ContactFrom_v10\index.html">Contact us</a></li>
+                                <li><a href="../PHP\home.php#services">Out Services</a></li>
                             </ul>
                         </div>
                     </div>
@@ -734,7 +735,7 @@ return $output;
                         <div class="widget no-box">
                             <h5 class="widget-title">Get Started<span></span></h5>
                             <p>Get access to your full Training and Marketing Suite.</p>
-                            <a class="btn btn-color signup_window_button" id="ft_reg_btn">Register Now</a>
+                            <a class="btn btn-color signup_window_button"  id="ft_reg_btn">Register Now</a>
                         </div>
                     </div>
 
