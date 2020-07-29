@@ -86,7 +86,7 @@ function image_card($connect){
         $output .= '<div class="card col-lg-3 col-sm-12 col-md-6 team-member">
         <div style="margin: 20px 0px">
 
-            <img class="img-responsive" '. 'src='.'images/'.$row['name'].'style=min-width: 100%;>
+            <img class="img-responsive" '. 'src='.'images/'.$row['picture'].' style=min-width: 100%;>
         </div>
         <div class="text-center">'.'
 
@@ -97,7 +97,6 @@ function image_card($connect){
     </div>';
 
     $count = $count + 1 ;
-
 }
 return $output;
 }
