@@ -1,88 +1,106 @@
-<?php
-//  $db = mysqli_connect("localhost", "root", "", "theinterior");
-//  $result = mysqli_query($db, "SELECT * FROM images");
-?>
+
 <?php
 //index.php
 $connect = mysqli_connect("localhost", "root", "", "theinterior");
 function make_query($connect)
 {
- $query = "SELECT * FROM images";
- $result = mysqli_query($connect, $query);
- return $result;
+    $query = "SELECT * FROM images";
+    $result = mysqli_query($connect, $query);
+    return $result;
 }
 
 function make_slide_indicators($connect)
 {
- $output = ''; 
- $count = 0;
- $result = make_query($connect);
- while($row = mysqli_fetch_array($result))
- {
-  if($count == 0)
-  {
-   $output .= '
-   <li data-target="#dynamic_slide_show" data-slide-to="'.$count.'" class="active"></li>
+    $output = '';
+    $count = 0;
+    $result = make_query($connect);
+    while ($row = mysqli_fetch_array($result)) {
+        if ($count == 0) {
+            $output .= '
+   <li data-target="#dynamic_slide_show" data-slide-to="' . $count . '" class="active"></li>
    ';
-  }
-  else
-  {
-   $output .= '
-   <li data-target="#dynamic_slide_show" data-slide-to="'.$count.'"></li>
+        } else {
+            $output .= '
+   <li data-target="#dynamic_slide_show" data-slide-to="' . $count . '"></li>
    ';
-  }
-  $count = $count + 1;
- }
- return $output;
+        }
+        $count = $count + 1;
+    }
+    return $output;
 }
 
 function make_slides($connect)
 {
- $output = '';
- $count = 0;
- $result = make_query($connect);
- while($row = mysqli_fetch_array($result))
- {
-  if($count == 0)
-  {
-   $output .= '<div class="item active">';
-  }
-  else
-  {
-   $output .= '<div class="item">';
-  }
-  $output .= '
-   <img src="images/'.$row["image"].'" alt="'.$row["image_text"].'" />
+    $output = '';
+    $count = 0;
+    $result = make_query($connect);
+    while ($row = mysqli_fetch_array($result)) {
+        if ($count == 0) {
+            $output .= '<div class="item active">';
+        } else {
+            $output .= '<div class="item">';
+        }
+        $output .= '
+   <img src="images/' . $row["image"] . '" alt="' . $row["image_text"] . '" />
 
   </div>
   ';
-  $count = $count + 1;
- }
- return $output;
+        $count = $count + 1;
+    }
+    return $output;
 }
 
-// function team_user($connect){
-//     unset($output);
-//     $checking_out = '';
-//     $count = 0;
-//     $result_team_users = mysqli_query($connect, "SELECT * FROM team");
-//     while ($row = mysqli_fetch_array($result_team_users)) {
 
-// $output .= '<div class="item active">';
-// $checking_out .= '<img class="img-responsive" src="images/'.$row['picture'] . ' />"' . '</div>  <div class="text-center">  <h2>' . $row['name'] . '</h2> <p>' . $row['role'] . '</p>' . '</div>
-// </div>';
+function service_query($connect)
+{
+    $service_query_result = mysqli_query($connect, "SELECT * FROM services");
+    $counter = 0;
+    $service_output = '';
 
+    while ($row = mysqli_fetch_array($service_query_result)) {
+        $service_output .=   '
+        <div class="col-lg-4 col-sm-12 col-md-6 feature_card">
+        <div class="service-box">
+            <div class="hexagon">
+                <div class="inner">
+                    <i class="fa fa-star-o"></i>
+                </div>
+            </div>
+            <div class="media-body">
+                '. '<h4 class="media-heading ">' . $row['service'] . '</h4>'.'
+            </div>
+        </div>
+    </div>';
 
-//         $output .= '
-//    <img src="images/' . $row["image"] . '" alt="'  . '" />
-//   </div>
-//   ';
-//         $count = $count + 1;
-//     }
+            $counter = $counter + 1 ;
+    }
 
-//     return $checking_out;
+    return $service_output;
+}
 
-// }
+function image_card($connect){
+    $output = '';
+    $count = 0;
+    $result = mysqli_query($connect , "SELECT * FROM team");
+    while ($row = mysqli_fetch_array($result)) {
+        $output .= '<div class="card col-lg-3 col-sm-12 col-md-6 team-member">
+        <div style="margin: 20px 0px">
+
+            <img class="img-responsive" '. 'src='.'images/'.$row['name'].'style=min-width: 100%;>
+        </div>
+        <div class="text-center">'.'
+
+            <h2>'.$row['name'].'</h2>
+            <p>'.$row['role'].'</p>
+
+        </div>
+    </div>';
+
+    $count = $count + 1 ;
+
+}
+return $output;
+}
 
 ?>
 
@@ -493,103 +511,11 @@ function make_slides($connect)
     <div class="container">
 
         <div class="row">
-            <div class="col-lg-4 col-sm-12 col-md-6 feature_card">
-                <div class="service-box">
-                    <div class="hexagon">
-                        <div class="inner">
-                            <!-- <img src="svg_images\house.svg" alt=""> -->
-                            <i class="fa fa-star-o"></i>
-                        </div>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading ">Exterior</h4>
-                        <!-- <p>Backed by some of the biggest names in the industry, We provide sevice in ecterior as well.</p> -->
-                    </div>
-                </div>
-            </div>
+            
+            
+            <?php echo service_query($connect); ?>
 
-
-            <div class="col-lg-4 col-sm-12 col-md-6 feature_card">
-                <div class="service-box">
-                    <div class="hexagon">
-                        <div class="inner">
-                            <i class="fa fa-star-o"></i>
-                        </div>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading ">Interior</h4>
-                        <!-- <p>We provide service in exterior as well .</p> -->
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="col-lg-4 col-sm-12 col-md-6 feature_card">
-                <div class="service-box">
-                    <div class="hexagon">
-                        <div class="inner">
-                            <i class="fa fa-star-o"></i>
-                        </div>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading ">Gardens</h4>
-                        <!-- <p>Morbi vitae tortor tempus, placerat leo et, suscipit lectus. Phasellus ut euismod massa, eu
-                            eleifend ipsum.</p> -->
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-sm-12 col-md-6 feature_card">
-                <div class="service-box">
-                    <div class="hexagon">
-                        <div class="inner">
-                            <i class="fa fa-building" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading ">Office</h4>
-                        <!-- <p>Morbi vitae tortor tempus, placerat leo et, suscipit lectus. Phasellus ut euismod massa, eu
-                            eleifend ipsum.</p> -->
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-lg-4 col-sm-12 col-md-6 feature_card">
-                <div class="service-box">
-                    <div class="hexagon">
-                        <div class="inner">
-                            <i class="fa fa-star-o"></i>
-                        </div>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading ">Auditorum</h4>
-                        <!-- <p>Morbi vitae tortor tempus, placerat leo et, suscipit lectus. Phasellus ut euismod massa, eu
-                            eleifend ipsum.</p> -->
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-            <div class="col-lg-4 col-sm-12 col-md-6 feature_card">
-                <div class="service-box">
-                    <div class="hexagon">
-                        <div class="inner">
-                            <i class="fa fa-star-o"></i>
-                        </div>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading ">Studios</h4>
-                        <!-- <p>Morbi vitae tortor tempus, placerat leo et, suscipit lectus. Phasellus ut euismod massa, eu
-                            eleifend ipsum.</p> -->
-                    </div>
-                </div>
-            </div>
-
+            <!-- Service code result from db -->
 
         </div>
 
@@ -647,7 +573,7 @@ function make_slides($connect)
                 <path d="M 10 10 L 300 10" stroke="#05BA8E" />
             </svg>
 
-            <p>Meet out</p>
+            <p>Meet our best team</p>
 
         </div>
 
@@ -658,61 +584,9 @@ function make_slides($connect)
 
         <div class="row">
 
+        <?php echo image_card($connect); ?>
 
 
-            <div class="card col-lg-3 col-sm-12 col-md-6 team-member">
-                <div style="margin: 20px 0px">
-
-                    <img class="img-responsive" src="https://webthemez.com/demo/bright-interior-design-bootstrap-responsive-web-template/images/team/01.jpg" alt="" style="min-width: 100%;">
-                </div>
-                <div class="text-center">
-
-                    <h2>JOhN DOE</h2>
-                    <p>CEO</p>
-
-                </div>
-            </div>
-
-            <div class="card col-lg-3 col-sm-12 col-md-6 team-member">
-                <div style="margin: 20px 0px">
-
-
-                    <img class="img-responsive" src="https://webthemez.com/demo/bright-interior-design-bootstrap-responsive-web-template/images/team/02.jpg" alt="" style="min-width: 100%;">
-                </div>
-                <div class="text-center">
-
-                    <h2>Mike Timobbs</h2>
-                    <p>Manager</p>
-
-                </div>
-            </div>
-
-
-            <div class="card col-lg-3 col-sm-12 col-md-6 team-member">
-                <div style="margin: 20px 0px">
-
-                    <img class="img-responsive" src="https://webthemez.com/demo/bright-interior-design-bootstrap-responsive-web-template/images/team/03.jpg" alt="" style="min-width: 100%;">
-                </div>
-                <div class="text-center">
-
-                    <h2>Remo Silvaus</h2>
-                    <p>Designer</p>
-
-                </div>
-            </div>
-
-            <div class="card col-lg-3 col-sm-12 col-md-6 team-member">
-                <div style="margin: 20px 0px">
-
-                    <img class="img-responsive" src="https://webthemez.com/demo/bright-interior-design-bootstrap-responsive-web-template/images/team/04.jpg" alt="" style="min-width: 100%;">
-                </div>
-                <div class="text-center">
-
-                    <h2>Niscal Deon</h2>
-                    <p>Architect</p>
-
-                </div>
-            </div>
 
         </div>
 
@@ -750,7 +624,7 @@ function make_slides($connect)
 
 
 
-            <div id="pricing"  class="card col-lg-3 col-sm-12 col-md-6">
+            <div id="pricing" class="card col-lg-3 col-sm-12 col-md-6">
                 <div class="text-center mr-auto ml-auto pricing">
                     <span>$40</span>
                 </div>
@@ -860,7 +734,7 @@ function make_slides($connect)
                         <div class="widget no-box">
                             <h5 class="widget-title">Get Started<span></span></h5>
                             <p>Get access to your full Training and Marketing Suite.</p>
-                            <a class="btn btn-color signup_window_button" id="ft_reg_btn" >Register Now</a>
+                            <a class="btn btn-color signup_window_button" id="ft_reg_btn">Register Now</a>
                         </div>
                     </div>
 
