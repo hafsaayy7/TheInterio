@@ -27,10 +27,11 @@
     $email = $_POST['email'];
     $password =  $_POST['password'];
 
-    $query="SELECT * FROM `user` WHERE `email` = '$email'";
+    $query="SELECT * FROM `user` WHERE `email` = $email";
 
     $result = mysqli_query($connection, $query);
     $row = mysqli_fetch_assoc($result);
+        // here is something wrong with code ....
 
 
     if ($row == null){
@@ -43,6 +44,7 @@
     }
     else {
         echo "<h1>Invalid password</h1>";
+        header("Location : afterlogin.php");
     }
     ?>
 </body>
