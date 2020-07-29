@@ -63,21 +63,23 @@
             -o-transition: all .3s ease 0s;
             transition: all .3s ease 0s;
         }
-        label{
+
+        label {
             margin-left: 20px;
             width: 300px;
             display: inline-block;
             margin-right: 100px;
         }
-        textarea{
+
+        textarea {
             display: inline-block;
         }
 
-        form{
+        form {
             font-size: 30px;
             margin: 30px 0px;
         }
-        
+
 
         .order-heading,
         .tabcontent {
@@ -103,7 +105,7 @@
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul id="navbar-div" class="navbar-nav ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="home.html">Home
+                                <a class="nav-link" href="./home.php">Home
                                     <span class="sr-only">(current)</span>
                                 </a>
                             </li>
@@ -117,7 +119,7 @@
                                 <a class="nav-link login_window_button" href="support.php">support</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="home.html">Log out</a>
+                                <a class="nav-link" href="/home.php">Log out</a>
                             </li>
                         </ul>
                     </div>
@@ -127,6 +129,56 @@
     </div>
 
 
+    <style>
+        .sidemenu {
+    background-color: #cee7ef;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    max-width: 360px;
+    font-size: 16px;
+}
+.sidemenu li ,.sidemenu a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+
+    color: #007cb2;
+
+    /* padding: 20px 10px; */
+}
+.heading-primary{
+    font-size: 30px;
+    padding: 0px 20px;
+}
+
+.content {
+    padding-left: 50px;
+}
+
+p.lead {
+    font-size: 18px;
+    color: #007cb2;
+    line-height: 1.6em;
+    font-weight: 500;
+    padding-bottom: 0;
+    margin-bottom: 0.5rem;
+}
+
+body {
+    font-family: 'Circular-Book', sans-serif;
+    background-color: white;
+    /* padding-top: 114px; */
+
+    font-size: 16px;
+}
+.content p{
+    margin :20px 0px;
+}
+
+
+    </style>
+
+
 
 </head>
 
@@ -134,29 +186,105 @@
 
     <div class="container">
 
-        <form action="service.php" method="POST" id ="service_request_id">
-            <div>
+        <div class="container">
+            <div class="section">
+                <div class="row">
+                    <div class="col-md-4 col-lg-4 sidemenu">
+                        <aside class="sidebar" id="sidebar" data-plugin-sticky="" data-plugin-options="{'minWidth': 991, 'containerSelector': '.container', 'padding': {'top': 110}}">
 
-                <label for="">Enter Service name </label>
-                <input type="text" name="service_name_field">
+                            <h2 class="heading-primary">Hire Us</h2>
+
+                            <ul>
+                                
+                                <li><a class="" href="../ContactFrom_v10\ContactFrom_v10\index.html">Request a call</a></li>
+                                <li><a class=" " href="/estimate/">Request a free estimate</a></li>
+                            </ul>
+
+                        </aside>
+                    </div>
+                    <div class="col-md-8 col-lg-8 content">
+
+                        <div class="row">
+                            <div class="col">
+
+
+                                <h5>Request a free estimate</h5>
+                                <form action="#contactForm" method="post">
+                                    <input type="hidden" name="submitForm" value="1">
+                                    <p class="lead">Talk to us to learn more or to get your project started now!</p>
+
+                                    <p>We'd love to hear more about your project and find out how we can best support you.</p>
+
+                                    <p style="display:none;">If you can fill out this form, you have all the
+                                        skills you need to update your own website! No programming, no HTML...</p>
+
+
+
+                                    <div class="form-group">
+                                        <label for="name"><h5>Your name</h5></label>
+                                        <input type="text" class="form-control" id="name" name="name" value="" required pattern="^[a-zA-Z]{3,}">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="email"><h5>Your email</h5></label>
+                                        <input type="text" class="form-control" id="email" name="email" value="" required pattern="^([a-zA-Z0-9]+)@([a-zA-Z]+)\.([a-zA-Z]{2,5})$">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="phone"><h5>Your phone number</h5></label>
+                                        <input type="text" class="form-control" name="phone" id="phone" value="" required pattern="^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*$">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="timeframe"><h5>Your timeframe is</h5></label>
+
+                                        <select name="timeframe" class="form-control" id="timeframe">
+                                            <option value="">--- select ---</option>
+                                            <option value=""></option>
+                                            <option value="As soon as possible (rush job)">As soon as possible (rush job)</option>
+                                            <option value="Within 1 week (rush job)">Within 1 week (rush job)</option>
+                                            <option value="Within 2 weeks">Within 2 weeks</option>
+                                            <option value="Within a month">Within a month</option>
+                                            <option value="Sometime in the next few months">Sometime in the next few months</option>
+                                            <option value="Sometime in the next year">Sometime in the next year</option>
+                                            <option value="I'm not really sure">I'm not really sure</option>
+                                        </select>
+
+                                    </div>
+
+                    
+
+                                    <div class="form-group">
+                                        <label for="budget"><h5>Your budget is</h5></label>
+                                        <div class="input-group" required>
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">$</div>
+                                            </div>
+                                            <input type="text" name="budget" id="budget" class="form-control" value="" required>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label for="comments">
+                                            <h5>Comments</h5> (Describe your project and requirements)</label>
+
+                                        <textarea required rows="6" id="comments" class="form-control" name="comments"></textarea>
+                                    </div>
+
+                                    
+                                    <br>
+                                    <div><input type="submit" value="Submit Quote" class="btn btn-primary" id="request-free-quote-button"></div>
+
+                                </form>
+                                <p></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
-            <div>
-                <label for="">Service details</label>
-                <textarea rows="4" cols="22" name="service_request_field" form="service_request_id">
-                </textarea>
-            </div>
-
-            <div>
-
-                
-                <label for=""> Duration</label>
-                <input type="number" name="no_of_days_field">
-            </div>
-
-            <button class="btn btn-lg" type="submit">Submit</button>
-
-        </form>
-
+        </div>
     </div>
 
 
@@ -166,11 +294,22 @@
 
 <?php
 
-if (isset($_REQUEST['submit'])){
+if (isset($_REQUEST['submit'])) {
+    $name = $_REQUEST['name'];
+    $email = $_REQUEST['email'];
+    $phone = $_REQUEST['phone'];
+    $phone = $_REQUEST['budget'];
+
+    $timeframe = $_REQUEST['timeframe'];
+    $budget = $_REQUEST['budget'];
 
     $service_name = $_REQUEST['service_name_field'];
     $service_detail = $_REQUEST['service_request_field'];
-    $duration = $_REQUEST['no_of_days_field'];
+    $requirements = $_REQUEST['comments'];
+
+
+
+    // echo "<h5>We will send quatation on your number</h5>";
 
 
     // Write your database insertion code here 

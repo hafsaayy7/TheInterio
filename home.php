@@ -328,7 +328,7 @@ return $output;
             <!-- inser more links here -->
 
             <li><a href="home.php">Home</a></li>
-            <li><a href="#home">Hire Us</a></li>
+            <li><a href="./PHP/service.php">Hire Us</a></li>
             <li><a href="./blog.html">Blog</a></li>
             <li><a href="#home" class="login_window_button">Login</a></li>
             <li><a href="ContactFrom_v10/ContactFrom_v10/index.html">Contact</a></li>

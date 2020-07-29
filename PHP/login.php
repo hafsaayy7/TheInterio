@@ -27,7 +27,7 @@
     $email = $_POST['email'];
     $password =  $_POST['password'];
 
-    $query="SELECT * FROM `theinterior`.`user` WHERE `email` = '$email'";
+    $query="SELECT * FROM `user` WHERE `email` = '$email'";
 
     $result = mysqli_query($connection, $query);
     $row = mysqli_fetch_assoc($result);

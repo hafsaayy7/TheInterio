@@ -1,3 +1,65 @@
+
+
+<?php 
+
+$connect = mysqli_connect("localhost", "root", "", "theinterior");
+
+function get_blogpost($connect){
+  $output = '';
+  $count = 0 ;
+
+  $result = mysqli_query($connect , "SELECT * FROM blog");
+
+  while ($row = mysqli_fetch_array($result)) {
+
+    $output .= '<div class="col-lg-6">
+    <div class="blog-post">
+      <div class="blog-thumb">
+        <img src='.$row['picture'] .'>
+      </div>
+      <div class="down-content">
+        <span>Category</span>
+        <a href="post-details.html">
+          <h4>'.$row['title'] .'</h4>
+        </a>
+        <ul class="post-info">
+          <li><a href="#">Admin</a></li>
+          <!-- <li><a href="#">May 31, 2020</a></li> -->
+          <li><a href="#">'.$row['comments'] .'</a></li>
+        </ul>
+        <p>'.$row['discription'] .'</p>
+        <div class="post-options">
+          <div class="row">
+            <div class="col-lg-12">
+              <ul class="post-tags">
+                <li><i class="fa fa-tags"></i></li>
+                <li><a href="#">Hire interior designer</a>,</li>
+                <li><a href="#">Hire us </a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>';
+
+  $count = $count + 1 ;
+
+  }
+
+
+  return $output;
+
+
+}
+
+
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,7 +124,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul id="navbar-div" class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="home.html">Home
+              <a class="nav-link" href="home.php">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
@@ -216,220 +278,10 @@
         <div class="col-lg-8">
           <div class="all-blog-posts">
             <div class="row">
-              <div class="col-lg-6">
-                <div class="blog-post">
-                  <div class="blog-thumb">
-                    <img src="https://cdn.decorilla.com/online-decorating/wp-content/uploads/2019/06/industrial-modern-kitchen-design-decorilla.jpg" alt="">
-                  </div>
-                  <div class="down-content">
-                    <span>Category</span>
-                    <a href="post-details.html">
-                      <h4>10 Reasons Why You Should Hire an Interior Decorator</h4>
-                    </a>
-                    <ul class="post-info">
-                      <li><a href="#">Admin</a></li>
-                      <!-- <li><a href="#">May 31, 2020</a></li> -->
-                      <li><a href="#">12 Comments</a></li>
-                    </ul>
-                    <p>It’s something to think about if you haven’t already done so. Hiring an interior decorator is a
-                      smart decision if you’ve invested a good bit of money into your home and want to be able to
-                      showcase it to look its best. Decorators truly serve a purpose for everyone. Whether you have no
-                      idea where or how to begin to decorate your home, or whether you have an idea but need help tying
-                      pieces together, or you simply haven’t the time to execute your style and desires due to your busy
-                      day to day schedule.</p>
-                    <div class="post-options">
-                      <div class="row">
-                        <div class="col-lg-12">
-                          <ul class="post-tags">
-                            <li><i class="fa fa-tags"></i></li>
-                            <li><a href="#">Hire interior designer</a>,</li>
-                            <li><a href="#">Hire us </a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="blog-post">
-                  <div class="blog-thumb">
-                    <img
-                      src="https://cdn.decorilla.com/online-decorating/wp-content/uploads/2019/06/modern-kitchen-interior-design-by-decorilla-designer-sonia-c-1536x1152.jpg"
-                      alt="">
-                  </div>
-                  <div class="down-content">
-                    <span>Category</span>
-                    <a href="post-details.html">
-                      <h4> What are your interior design must-haves?</h4>
-                    </a>
-                    <ul class="post-info">
-                      <li><a href="#">Admin</a></li>
-                      <!-- <li><a href="#">May 22, 2020</a></li> -->
-                      <li><a href="#">26 Comments</a></li>
-                    </ul>
-                    <p>This is a little bit of a test to get an idea of the interior designer’s intuition and whether
-                      their natural style will suit your taste and lifestyle. Some designers believe that you have to
-                      use a neutral palette or certain wood types, while others believe in color and stone. This will
-                      also give you an indication of the level of the detail your designer goes into. Still lost? Here
-                      are some more questions to ask before you hire an interior designer for your home.</p>
-                    <div class="post-options">
-                      <div class="row">
-                        <div class="col-lg-12">
-                          <ul class="post-tags">
-                            <li><i class="fa fa-tags"></i></li>
-                            <li><a href="#">interior Design</a>,</li>
-                            <li><a href="#">Exterior design </a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="blog-post">
-                  <div class="blog-thumb">
-                    <img
-                      src="https://cdn.decorilla.com/online-decorating/wp-content/uploads/2019/06/hire-an-interior-designer-online-decorilla-1024x554.jpg"
-                      alt="">
-                  </div>
-                  <div class="down-content">
-                    <span>Category</span>
-                    <a href="post-details.html">
-                      <h4>What To Know Before You Hire An Interior Designer</h4>
-                    </a>
-                    <ul class="post-info">
-                      <li><a href="#">Admin</a></li>
-                      <!-- <li><a href="#">May 22, 2020</a></li> -->
-                      <li><a href="#">10 Comments</a></li>
-                    </ul>
-                    <p>First, before you dive straight into looking for your dream designer, there are a few things you
-                      need to consider. A prepared client, that’s the future you, makes the interior design process
-                      easy, fun, and above all, successful. Most importantly, once you’ve done your homework, you will
-                      have a clear idea of what your home needs and that makes finding interior design help a lot
-                      simpler. Check out these helpful resources if you have some questions about the cost of hiring an
-                      interior designer as well.</p>
-                    <div class="post-options">
-                      <div class="row">
-                        <div class="col-lg-12">
-                          <ul class="post-tags">
-                            <li><i class="fa fa-tags"></i></li>
-                            <li><a href="#">POst tag1</a>,</li>
-                            <li><a href="#">Post tag 2</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="blog-post">
-                  <div class="blog-thumb">
-                    <img
-                      src="https://cdn.decorilla.com/online-decorating/wp-content/uploads/2018/08/hire-an-interior-designer-living-room-patio.png"
-                      alt="">
-                  </div>
-                  <div class="down-content">
-                    <span>Category</span>
-                    <a href="post-details.html">
-                      <h4>How to Prepare for an Interior Decorator</h4>
-                    </a>
-                    <ul class="post-info">
-                      <li><a href="#">Admin</a></li>
-                      <!-- <li><a href="#">May 22, 2020</a></li> -->
-                      <li><a href="#">6 Comments</a></li>
-                    </ul>
-                    <p>First, before you dive straight into looking for your dream designer, there are a few things you
-                      need to consider. A prepared client, that’s the future you, makes the interior design process
-                      easy, fun, and above all, successful. Most importantly, once you’ve done your homework, you will
-                      have a clear idea of what your home needs and that makes finding interior design help a lot
-                      simpler. Check out these helpful resources if you have some questions about the cost of hiring an
-                      interior designer as well.</p>
-                    <div class="post-options">
-                      <div class="row">
-                        <div class="col-lg-12">
-                          <ul class="post-tags">
-                            <li><i class="fa fa-tags"></i></li>
-                            <li><a href="#">Hiring tips</a>,</li>
-                            <li><a href="#"></a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="blog-post">
-                  <div class="blog-thumb">
-                    <img
-                      src="https://www.essentialhome.eu/inspirations/wp-content/uploads/2017/01/The-Importance-Of-Interior-Design-2.jpg"
-                      alt="">
-                  </div>
-                  <div class="down-content">
-                    <span>Category</span>
-                    <a href="post-details.html">
-                      <h4>The Importance Of Interior Design</h4>
-                    </a>
-                    <ul class="post-info">
-                      <li><a href="#">Admin</a></li>
-                      <!-- <li><a href="#">May 22, 2020</a></li> -->
-                      <li><a href="#">10 Comments</a></li>
-                    </ul>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum magni alias quos voluptatem
-                      cumque deserunt dolorum. Iure in temporibus dicta. Dolore quidem harum, provident repudiandae
-                      repellendus sapiente magnam sint? Accusantium?</p>
-                    <div class="post-options">
-                      <div class="row">
-                        <div class="col-lg-12">
-                          <ul class="post-tags">
-                            <li><i class="fa fa-tags"></i></li>
-                            <li><a href="#">POst tag1</a>,</li>
-                            <li><a href="#">Post tag 2</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="blog-post">
-                  <div class="blog-thumb">
-                    <img
-                      src="https://cdn.decorilla.com/online-decorating/wp-content/uploads/2018/08/hire-an-interior-designer-office-design.png"
-                      alt="">
-                  </div>
-                  <div class="down-content">
-                    <span>Category</span>
-                    <a href="post-details.html">
-                      <h4> How do We structure your interior design projects?</h4>
-                    </a>
-                    <ul class="post-info">
-                      <li><a href="#">Admin</a></li>
-                      <!-- <li><a href="#">May 22, 2020</a></li> -->
-                      <li><a href="#">26 Comments</a></li>
-                    </ul>
-                    <p>How the designer structures a project will give you an indication of their time management as
-                      well as what to expect from the process. It is a good idea to start with an initial consultation,
-                      and then to discuss fees before jumping into the design process. The designer should also first
-                      present a concept before the details of the design are finalized.</p>
-                    <div class="post-options">
-                      <div class="row">
-                        <div class="col-lg-12">
-                          <ul class="post-tags">
-                            <li><i class="fa fa-tags"></i></li>
-                            <li><a href="#">POst tag1</a>,</li>
-                            <li><a href="#">Post tag 2</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <!-- here php class will be used -->
+              <?php  echo get_blogpost($connect); 
+              ?>
+              
               <div class="col-lg-12">
                 <ul class="page-numbers">
                   <li><a href="#">1</a></li>
