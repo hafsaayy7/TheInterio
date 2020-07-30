@@ -34,15 +34,21 @@
 
         if ($row == null) {
             echo "<h1>Invalid user!</h1>";
-            header("Location : afterlogin.php");
         } elseif ($row['email'] == $email and $row['password'] == $password) {
             echo "<h1>Logged in successfully</h1>";
-            header("Location : afterlogin.php");
+            header("Location: http://localhost/TheInterio/PHP/service.php");
+            exit();
         } else {
             echo "<h1>Invalid password</h1>";
         }
     }
     ?>
 </body>
+
+<script>
+function abc(){
+console.log("Blasdkawdkaw")
+}
+</script>
 
 </html>
