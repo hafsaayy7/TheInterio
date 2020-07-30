@@ -135,12 +135,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="orders.php">My orders</a>
                             </li>
-                            <li class="nav-item">
-                                <a id="additional_service" class="nav-link" href="service.php">Additional service request</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link login_window_button" href="support.php">support</a>
-                            </li>
+
                             <li class="nav-item">
                                 <a class="nav-link" href="home.php">Log out</a>
                             </li>
@@ -343,7 +338,7 @@
                         <h5 class="widget-title">Quick Links<span></span></h5>
                         <ul class="thumbnail-widget">
                             <li><a href="blog.php">Blog</a></li>
-                            <li><a href="home.php#pricing">Pricing</a></li>
+                            <li><a href="home.php">Pricing</a></li>  //
                             <li><a href="home.php#about">About us</a></li>
                             <li><a href="../ContactFrom_v10/ContactFrom_v10/index.html">Contact us</a></li>
                             <li><a href="home.php#services">Out Services</a></li>

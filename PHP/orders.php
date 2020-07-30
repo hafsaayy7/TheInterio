@@ -100,12 +100,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="orders.php">My orders</a>
                             </li>
-                            <li class="nav-item">
-                                <a id="additional_service" class="nav-link" href="service.php">service request</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link login_window_button" href="support.php">support</a>
-                            </li>
+
                             <li class="nav-item">
                                 <a class="nav-link" href="home.php">Log out</a>
                             </li>
@@ -117,7 +112,157 @@
     </div>
 
 
+    <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" /> -->
+    <link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
+
+    <script>
+        var selected_button = '';
+        var username_validated = false;
+        var email_validated = false;
+        var password_validated = false;
+        var confirm_password_validated = false;
+        var firstname_validated = false;
+        var lastname_validated = false;
+
+
+        // document.getElementById('signup_btn').disabled = true;
+
+
+        $(function() {
+            $(".login_window_button").click(function() {
+                $(".login_window_model").modal('show');
+                selected_button = "login";
+            });
+            $(".login_window_model").modal({
+                closable: true
+            });
+        });
+        $(function() {
+            $(".signup_window_button").click(function() {
+                $(".signup_window_model").modal('show');
+                selected_button = "signup";
+            });
+            $(".signup_window_model").modal({
+                closable: true
+            });
+        });
+
+
 </head>
+
+
+  <div class="ui modal test login_window_model">
+        <div class="ui middle aligned center aligned grid">
+            <div class="column">
+                <h2 class="ui blue image header">
+                    <div class="content">
+                        Log-in to your account
+                    </div>
+                </h2>
+                <form class="ui large form" method="POST" action="login.php">
+                    <div class="ui  segment">
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input id="email_id" type="text" name="email" placeholder="E-mail address" required="required" pattern="^([a-zA-Z0-9]+)@([a-zA-Z]+)\.([a-zA-Z]{2,5})$">
+                                <span id="email_error"></span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="lock icon"></i>
+                                <input id="signin_password_id" type="password" name="password" placeholder="Password" required="required" pattern="^[a-zA-Z0-9]*$">
+                                <span id="password_error"></span>
+                            </div>
+                        </div>
+                        <div><button id="sign_in_id" class="ui fluid large primary submit button" type="submit">Login
+                            </button></div>
+                    </div>
+                </form>
+
+                <div class="ui message">
+                    New to us? <a href="#home" class="signup_window_button">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui modal test signup_window_model">
+        <div class="ui middle aligned center aligned grid">
+            <div class="column">
+                <h2 class="ui blue image header">
+                    <div class="content">
+                        Sign-up now
+                    </div>
+                </h2>
+                <form class="ui large form" method="POST" action="http://localhost/TheInterio/PHP/signup.php">
+                    <div class="ui  segment">
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <input id="name_field_id" type="text" name="firstnamefield" value="" placeholder="Enter First Name" required="required" pattern="^[a-zA-z]{3,}$">
+                                <span id="name_error"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <input id="last_name_field_id" type="text" name="lastnamefield" value="" placeholder="Enter Last Name" required="required" pattern="^[a-zA-z]{3,}$">
+                                <span id="lastname_error"></span>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input id="name_value" type="text" name="usernamefield" placeholder="Username" required="required" pattern="^[a-zA-Z][0-9a-zA-Z]{3,}$">
+                                <span id="username_error"></span>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input id="email_input" type="text" name="emailfield" placeholder="E-mail address" required="required" pattern="^([a-zA-Z0-9]+)@([a-zA-Z]+)\.([a-zA-Z]{2,5})$">
+                                <span id="signup_email_error"></span>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="lock icon"></i>
+                                <input id="password_input" type="password" name="password" placeholder="Password" required="required" pattern="^[a-zA-Z0-9]*$">
+                                <div>
+                                    <span id="signup_password_error"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="lock icon"></i>
+                                <input id="confirm_password_input" type="password" name="confirm_password" placeholder="Confirm Password" required="required" pattern="^[a-zA-Z0-9]*$">
+                                <div>
+                                    <span id="confirm_password_error"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div><button id="signup_btn_id" type="submit" class="ui fluid large primary submit button btn btn-large">Sign up</button>
+                        </div>
+
+                    </div>
+                </form>
+
+                <div class="ui message">
+                    Have an account? <a href="#" class="login_window_button">Login in</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
 <body class="">
     <div class="container">
@@ -198,7 +343,7 @@
                         <ul class="thumbnail-widget">
                             <li><a href="../PHP\blog.php">Blog</a></li>
                             <li><a href="../PHP\home.php#pricing">Pricing</a></li>
-                            <li><a href="../PHP\home.php#services">About us</a></li>
+                            <li><a href="../PHP\home.php#about">About us</a></li>
                             <li><a href="../ContactFrom_v10\ContactFrom_v10\index.html">Contact us</a></li>
                             <li><a href="home.php#services">Out Services</a></li>
                         </ul>
@@ -209,7 +354,7 @@
                     <div class="widget no-box">
                         <h5 class="widget-title">Get Started<span></span></h5>
                         <p>Get access to your full Training and Marketing Suite.</p>
-                        <a class="btn btn-color signup_window_button" id="ft_reg_btn">Register Now</a>
+                        <a class="btn btn-color signup_window_button" href= "#" id="ft_reg_btn">Register Now</a>
                     </div>
                 </div>
 

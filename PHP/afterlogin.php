@@ -70,10 +70,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="service.php">request estimate</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link login_window_button" href="support.php">support</a>
-                        </li>
-                        <li class="nav-item">
+                                                <li class="nav-item">
                             <a class="nav-link" href="home.php">Log out</a>
                         </li>
                     </ul>

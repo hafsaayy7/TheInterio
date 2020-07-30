@@ -23,9 +23,57 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="../../css/home.css">
+	<link rel="stylesheet" type="text/css" href="../../css/blog.css">
 <!--===============================================================================================-->
+
+
+	<!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" /> -->
+	<link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css" rel="stylesheet" type="text/css" />
+	<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
+
+
+
 </head>
 <body>
+<div>
+
+
+	<nav class="navbar navbar-expand-lg navbar-style">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="index.html">
+				<h2>The Interiors<em>.</em></h2>
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul id="navbar-div" class="navbar-nav ml-auto">
+					<!-- <li class="nav-item">
+                        <a class="nav-link" href="home.html">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li> -->
+					<li class="nav-item">
+						<a class="nav-link" href="../../PHP/orders.php">My orders</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../../PHP/service.php">request estimate</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../../PHP/home.php">Log out</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</div>
+
+<!--login model class starts here -->
+
+
+
 
 
 	<div class="container-contact100">
@@ -118,11 +166,11 @@
 					<div class="widget no-box">
 						<h5 class="widget-title">Quick Links<span></span></h5>
 						<ul class="thumbnail-widget">
-							<li><a href="blog.html">Blog</a></li>
-							<li><a href="#pricing">Pricing</a></li>
-							<li><a href="#services">About us</a></li>
-							<li><a href="ContactFrom_v10/ContactFrom_v10/index.html">Contact us</a></li>
-							<li><a href="#services">Out Services</a></li>
+							<li><a href="../../PHP/blog.php">Blog</a></li>
+							<li><a href="../../PHP/home.php#pricing">Pricing</a></li>
+							<li><a href="../../PHP/home.php#services">About us</a></li>
+							<li><a href="index.html">Contact us</a></li>
+							<li><a href="../../PHP/home.php#services">Out Services</a></li>
 						</ul>
 					</div>
 				</div>
@@ -131,7 +179,8 @@
 					<div class="widget no-box">
 						<h5 class="widget-title">Get Started<span></span></h5>
 						<p>Get access to your full Training and Marketing Suite.</p>
-						<a class="btn btn-color signup_window_button" id="ft_reg_btn">Register Now</a>
+
+<!--						<a class="btn btn-color signup_window_button" id="ft_reg_btn">Register Now</a>-->
 					</div>
 				</div>
 
