@@ -55,9 +55,8 @@
         else {
             $query = "INSERT INTO `theinterior`.`user` (`username`, `email`, `password`,`firstname`,`lastname`) VALUES ('$username', '$email', '$password','$firstname','$lastname')";
             mysqli_query($connection, $query);
+            header("Location: http://localhost/TheInterio/PHP/service.php");
             echo "<h1>Registered successfully!</h1>";
-
-            header("Location : afterlogin.php");
         }
     }
     ?>
