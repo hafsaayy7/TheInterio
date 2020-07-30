@@ -318,6 +318,118 @@
         </div>
     </div>
 
+    
+    <div class="ui modal test login_window_model">
+        <div class="ui middle aligned center aligned grid">
+            <div class="column">
+                <h2 class="ui blue image header">
+                    <div class="content">
+                        Log-in to your account
+                    </div>
+                </h2>
+                <form class="ui large form" method="POST" action="login.php">
+                    <div class="ui  segment">
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input id="email_id" type="text" name="email" placeholder="E-mail address" required="required" pattern="^([a-zA-Z0-9]+)@([a-zA-Z]+)\.([a-zA-Z]{2,5})$">
+                                <span id="email_error"></span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="lock icon"></i>
+                                <input id="signin_password_id" type="password" name="password" placeholder="Password" required="required" pattern="^[a-zA-Z0-9]*$">
+                                <span id="password_error"></span>
+                            </div>
+                        </div>
+                        <div><button id="sign_in_id" class="ui fluid large primary submit button" type="submit">Login
+                            </button></div>
+                    </div>
+                </form>
+
+                <div class="ui message">
+                    New to us? <a href="#home" class="signup_window_button">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui modal test signup_window_model">
+        <div class="ui middle aligned center aligned grid">
+            <div class="column">
+                <h2 class="ui blue image header">
+                    <div class="content">
+                        Sign-up now
+                    </div>
+                </h2>
+                <form class="ui large form" method="POST" action="http://localhost/TheInterio/PHP/signup.php">
+                    <div class="ui  segment">
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <input id="name_field_id" type="text" name="firstnamefield" value="" placeholder="Enter First Name" required="required" pattern="^[a-zA-z]{3,}$">
+                                <span id="name_error"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <input id="last_name_field_id" type="text" name="lastnamefield" value="" placeholder="Enter Last Name" required="required" pattern="^[a-zA-z]{3,}$">
+                                <span id="lastname_error"></span>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input id="name_value" type="text" name="usernamefield" placeholder="Username" required="required" pattern="^[a-zA-Z][0-9a-zA-Z]{3,}$">
+                                <span id="username_error"></span>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input id="email_input" type="text" name="emailfield" placeholder="E-mail address" required="required" pattern="^([a-zA-Z0-9]+)@([a-zA-Z]+)\.([a-zA-Z]{2,5})$">
+                                <span id="signup_email_error"></span>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="lock icon"></i>
+                                <input id="password_input" type="password" name="password" placeholder="Password" required="required" pattern="^[a-zA-Z0-9]*$">
+                                <div>
+                                    <span id="signup_password_error"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="lock icon"></i>
+                                <input id="confirm_password_input" type="password" name="confirm_password" placeholder="Confirm Password" required="required" pattern="^[a-zA-Z0-9]*$">
+                                <div>
+                                    <span id="confirm_password_error"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div><button id="signup_btn_id" type="submit" class="ui fluid large primary submit button btn btn-large">Sign up</button>
+                        </div>
+
+                    </div>
+                </form>
+
+                <div class="ui message">
+                    Have an account? <a href="#" class="login_window_button">Login in</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 
 </body>
 

@@ -1,4 +1,3 @@
-
 <?php
 //index.php
 $connect = mysqli_connect("localhost", "root", "", "theinterior");
@@ -67,39 +66,39 @@ function service_query($connect)
                 </div>
             </div>
             <div class="media-body">
-                '. '<h4 class="media-heading ">' . $row['service'] . '</h4>'.'
+                ' . '<h4 class="media-heading ">' . $row['service'] . '</h4>' . '
             </div>
         </div>
     </div>';
 
-            $counter = $counter + 1 ;
+        $counter = $counter + 1;
     }
 
     return $service_output;
 }
 
-function image_card($connect){
+function image_card($connect)
+{
     $output = '';
     $count = 0;
-    $result = mysqli_query($connect , "SELECT * FROM team");
+    $result = mysqli_query($connect, "SELECT * FROM team");
     while ($row = mysqli_fetch_array($result)) {
         $output .= '<div class="card col-lg-3 col-sm-12 col-md-6 team-member">
         <div style="margin: 20px 0px">
 
-            <img class="img-responsive" '. 'src='.'../images/'.$row['picture'].' style=min-width: 100%;>
+            <img class="img-responsive" ' . 'src=' . '../images/' . $row['picture'] . ' style=min-width: 100%;>
         </div>
-        <div class="text-center">'.'
+        <div class="text-center">' . '
 
-            <h2>'.$row['name'].'</h2>
-            <p>'.$row['role'].'</p>
+            <h2>' . $row['name'] . '</h2>
+            <p>' . $row['role'] . '</p>
 
         </div>
     </div>';
 
-    $count = $count + 1 ;
-
-}
-return $output;
+        $count = $count + 1;
+    }
+    return $output;
 }
 
 ?>
@@ -109,12 +108,9 @@ return $output;
 <head>
     <meta charset="UTF-8">
     <title>Interiors</title>
-    <link type="text/css" href="..\css\home.css" rel="stylesheet">
     <!-- Adding bootstrap -->
+    <link type="text/css" href="..\css\home.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
-
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
     <script src="https://kit.fontawesome.com/d40bc104d7.js" crossorigin="anonymous"></script>
     <!--Adding font aswome icons CDN-->
     <script src="./slideshow.js"></script>
@@ -123,27 +119,14 @@ return $output;
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-
-
-    <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" /> -->
     <link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css" rel="stylesheet" type="text/css" />
     <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
     <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
 
     <script>
         var selected_button = '';
-        var username_validated = false;
-        var email_validated = false;
-        var password_validated = false;
-        var confirm_password_validated = false;
-        var firstname_validated = false;
-        var lastname_validated = false;
-
-
-        // document.getElementById('signup_btn').disabled = true;
-
 
         $(function() {
             $(".login_window_button").click(function() {
@@ -163,7 +146,6 @@ return $output;
                 closable: true
             });
         });
-
     </script>
 
 </head>
@@ -174,25 +156,14 @@ return $output;
             <h3>The Interiors</h3>
         </div>
         <div id="navbar-div">
-
-            <!-- inser more links here -->
-
             <li><a href="home.php">Home</a></li>
             <li><a href="service.php">Hire Us</a></li>
             <li><a href="blog.php">Blog</a></li>
             <li><a href="#" class="login_window_button">Login</a></li>
             <li><a href="..\ContactFrom_v10\ContactFrom_v10\index.html">Contact</a></li>
-
         </div>
     </div>
 
-    <head>
-        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-        <link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css" rel="stylesheet" type="text/css" />
-        <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-        <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
-        <meta charset="utf-8">
-    </head>
 
     <div class="ui modal test login_window_model">
         <div class="ui middle aligned center aligned grid">
@@ -361,8 +332,8 @@ return $output;
     <div class="container">
 
         <div class="row">
-            
-            
+
+
             <?php echo service_query($connect); ?>
 
             <!-- Service code result from db -->
@@ -394,7 +365,7 @@ return $output;
 
     <div class="container section-header">
 
-    <!-- Our group -->
+        <!-- Our group -->
 
         <div class="row">
             <div class="col-sm-6 wow" style="visibility: visible; animation-name: fadeInLeft;">
@@ -424,33 +395,20 @@ return $output;
 
                 <path d="M 10 10 L 300 10" stroke="#05BA8E" />
             </svg>
-
             <p>Meet our best team</p>
-
         </div>
-
     </div>
-
-
     <div id="team" class="container price-card-container">
-
         <div class="row">
-
-        <?php echo image_card($connect); ?>
-
-
-
+            <?php echo image_card($connect); ?>
         </div>
 
     </div>
-
-
 
     <!-- Team section ends here -->
 
 
     <!-- Pricing Section -->
-
 
     <div class="container pricing-section section-header">
         <div class="text-center">
@@ -459,10 +417,6 @@ return $output;
 
                 <path d="M 10 10 L 300 10" stroke="#05BA8E" />
             </svg>
-
-            <!-- <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum, excepturi! Fuga cupiditate pariatur
-                aliquam quas ut cumque. Quasi cupiditate maxime voluptatum cumque obcaecati nihil repudiandae quibusdam
-                amet ratione. Reprehenderit, ipsam?</p> -->
 
         </div>
 
@@ -484,8 +438,6 @@ return $output;
 
                     <p>per month</p>
                     <h2>Basic</h2>
-
-
                     <p>Door design</p>
                     <p>Consultation</p>
                     <p>Garden design</p>
@@ -519,13 +471,9 @@ return $output;
 
                     <p>per month</p>
                     <h2>Silver</h2>
-
-
                     <p>Home design</p>
                     <p>Garden design</p>
                     <p>Kitchen design</p>
-
-
                     <p><button class="btn btn-lg">Order now</button></p>
                 </div>
             </div>
@@ -554,9 +502,6 @@ return $output;
 
     <!-- Pricing container ends here  -->
 
-    <!-- Please Subscribe My Youtube Channel
-    https://www.youtube.com/channel/UCQM5ye1xR4vJgtga0ryud2Q/
-    -->
     <footer id="footer" class="footer-1">
         <div class="main-footer widgets-dark typo-light">
             <div class="container">
@@ -586,7 +531,7 @@ return $output;
                         <div class="widget no-box">
                             <h5 class="widget-title">Get Started<span></span></h5>
                             <p>Get access to your full Training and Marketing Suite.</p>
-                            <a class="btn btn-color signup_window_button"  id="ft_reg_btn">Register Now</a>
+                            <a class="btn btn-color signup_window_button" id="ft_reg_btn">Register Now</a>
                         </div>
                     </div>
 
