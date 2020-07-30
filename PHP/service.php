@@ -438,7 +438,7 @@
                         <h5 class="widget-title">Quick Links<span></span></h5>
                         <ul class="thumbnail-widget">
                             <li><a href="blog.php">Blog</a></li>
-                            <li><a href="home.php">Pricing</a></li>  //
+                            <li><a href="home.php">Pricing</a></li> 
                             <li><a href="home.php#about">About us</a></li>
                             <li><a href="../ContactFrom_v10/ContactFrom_v10/index.html">Contact us</a></li>
                             <li><a href="home.php#services">Out Services</a></li>
