@@ -94,63 +94,6 @@
         .tabcontent p {
             margin: 10px 0px;
         }
-    </style>
-
-<script>
-    $(function() {
-      $(".login_window_button").click(function() {
-        $(".login_window_model").modal('show');
-      });
-      $(".login_window_model").modal({
-        closable: true
-      });
-    });
-    $(function() {
-      $(".signup_window_button").click(function() {
-        $(".signup_window_model").modal('show');
-      });
-      $(".signup_window_model").modal({
-        closable: true
-      });
-    });
-
-
-
-  </script>
-
-    <div>
-        <header class="container-fluid navbar-style">
-            <nav class="navbar navbar-expand-lg navbar-style">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="index.html">
-                        <h2>The Interiors<em>.</em></h2>
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarResponsive">
-                        <ul id="navbar-div" class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="home.php">Home
-                                    <span class="sr-only">(current)</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="orders.php">My orders</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="home.php">Log out</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
-    </div>
-
-
-    <style>
         .sidemenu {
             background-color: #cee7ef;
             padding-top: 20px;
@@ -201,6 +144,56 @@
         }
     </style>
 
+<script>
+    $(function() {
+      $(".login_window_button").click(function() {
+        $(".login_window_model").modal('show');
+      });
+      $(".login_window_model").modal({
+        closable: true
+      });
+    });
+    $(function() {
+      $(".signup_window_button").click(function() {
+        $(".signup_window_model").modal('show');
+      });
+      $(".signup_window_model").modal({
+        closable: true
+      });
+    });
+
+  </script>
+
+    <div>
+        <header class="container-fluid navbar-style">
+            <nav class="navbar navbar-expand-lg navbar-style">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.html">
+                        <h2>The Interiors<em>.</em></h2>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul id="navbar-div" class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="home.php">Home
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="orders.php">My orders</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="home.php">Log out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
 
 
 </head>
@@ -240,9 +233,6 @@
 
                                     <p style="display:none;">If you can fill out this form, you have all the
                                         skills you need to update your own website! No programming, no HTML...</p>
-
-
-
                                     <div class="form-group">
                                         <label for="name">
                                             <h5>Your name</h5>
@@ -282,8 +272,6 @@
                                         </select>
 
                                     </div>
-
-
 
                                     <div class="form-group">
                                         <label for="budget">
@@ -430,9 +418,6 @@
             </div>
         </div>
     </div>
-
-
-
 
 </body>
 

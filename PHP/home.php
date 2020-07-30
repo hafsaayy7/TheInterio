@@ -115,7 +115,6 @@ function image_card($connect)
     <!--Adding font aswome icons CDN-->
     <script src="./slideshow.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -358,7 +357,7 @@ function image_card($connect)
                     color the line will not be visible -->
             </svg>
         </div>
-        <p class="container text-center">Theinteriors is a Islamabad based company dedicated to providing our clients with creative concepts, high quality interior design or kitchen design and flawless execution. We tailor each project to our client’s individual taste. We are a team of skilled interior designers in Islamabad and craftsmen. We pride ourselves on listening to our clients, working with them side-by-side, and paying fine attention to detail.
+        <p id="about" class="container text-center">Theinteriors is a Islamabad based company dedicated to providing our clients with creative concepts, high quality interior design or kitchen design and flawless execution. We tailor each project to our client’s individual taste. We are a team of skilled interior designers in Islamabad and craftsmen. We pride ourselves on listening to our clients, working with them side-by-side, and paying fine attention to detail.
 
             In the kitchen every centimeter counts. You will find all you need to make your kitchen and home spaces completely luxurious. The combination of different materials could add a more contemporary look. the goal of our kitchen designers in Islamabad is to create end results that are as unique and wonderful as our clients..</p>
     </div>
@@ -406,7 +405,6 @@ function image_card($connect)
     </div>
 
     <!-- Team section ends here -->
-
 
     <!-- Pricing Section -->
 
