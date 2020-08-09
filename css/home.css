@@ -243,9 +243,7 @@ img {
   color: #00cca3;
 }
 
-.price-card-container {
-  margin: 20px 0;
-}
+
 .team-member {
   background-color: #bebebe;
 }
@@ -297,18 +295,25 @@ button {
 
 /* Footer */
 
-/* Please Subscribe My Youtube Channel
-https://www.youtube.com/channel/UCQM5ye1xR4vJgtga0ryud2Q/
-*/
 
 /*==================== 
 	Footer 
 ====================== */
 
 /* Main Footer */
+
+/* #footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  /* height:60px;   Height of the footer */
+  /* background:#6cf; */
+/* } */
+
 footer .main-footer {
   padding: 20px 0;
   background: #000000;
+  
 }
 footer ul {
   padding-left: 0;

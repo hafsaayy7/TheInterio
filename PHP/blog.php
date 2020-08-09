@@ -358,7 +358,7 @@ function get_blogpost($connect)
   </section>
 
 
-
+<!-- 
   <footer id="footer" class="footer-1">
     <div class="main-footer widgets-dark typo-light">
       <div class="container">
@@ -424,7 +424,16 @@ function get_blogpost($connect)
         </div>
       </div>
     </div>
+  </footer> -->
+
+  <footer id = "footer" class="footer-1">
+    <script>
+      $('#footer').load('footer.html');
+
+    </script>
   </footer>
+
+ 
 
 
   <script language="text/Javascript">
@@ -441,3 +450,6 @@ function get_blogpost($connect)
 </body>
 
 </html>
+
+<!-- <div id="header"> -->
+<!-- ></div> -->
