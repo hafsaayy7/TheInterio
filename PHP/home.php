@@ -164,7 +164,7 @@ function image_card($connect)
         </div>
     </div>
 
-
+<!-- 
     <div class="ui modal test login_window_model">
         <div class="ui middle aligned center aligned grid">
             <div class="column">
@@ -272,7 +272,7 @@ function image_card($connect)
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
     <!--    Slideshoe div-->
