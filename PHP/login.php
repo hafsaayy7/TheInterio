@@ -36,7 +36,8 @@
             echo "<h1>Invalid user!</h1>";
         } elseif ($row['email'] == $email and $row['password'] == $password) {
             echo "<h1>Logged in successfully</h1>";
-            header("Location: http://localhost/TheInterio/PHP/service.php");
+            $value = $row['firstname'] .'&lastname='.$row['lastname'];
+            header("Location: http://localhost/TheInterio/PHP/afterlogin.php?firstname=".$value );
             exit();
         } else {
             echo "<h1>Invalid password</h1>";

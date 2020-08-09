@@ -174,7 +174,7 @@
                             <li><a href="blog.php">Blog</a></li>
                             <li><a href="home.php#pricing">Pricing</a></li>
                             <li><a href="home.php#about">About us</a></li>
-                            <li><a href="../ContactFrom_v10/ContactFrom_v10/index.html">Contact us</a></li>
+                            <li><a href="contact.php">Contact us</a></li>
                             <li><a href="home.php#services">Out Services</a></li>
                         </ul>
                     </div>
