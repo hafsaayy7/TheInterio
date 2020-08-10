@@ -13,7 +13,7 @@
     <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
     <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
 
-    <style>
+    <style> 
         body {
             font-family: 'Roboto', sans-serif;
             overflow-x: hidden;
@@ -30,15 +30,14 @@
             line-height: 30px;
         }
 
-        .navbar-style {
-            background-color: #121212;
-            color: white;
-            /* background: black; */
-        }
+       
 
-        button {
+        .btn {
             margin: 20px;
             width: 140px;
+            color: white ;
+            background-color:  #00cca3 ;
+            text-align: center;
         }
 
 
@@ -48,7 +47,6 @@
             list-style: none;
         }
 
-        h1,
         h2,
         h3,
         h4,
@@ -56,21 +54,9 @@
         h6 {
             margin: 0px;
         }
-
-        .navbar .navbar-brand h2 {
-            color: #00cca3;
-            text-transform: uppercase;
-            font-size: 24px;
-            font-weight: 900;
-            -webkit-transition: all .3s ease 0s;
-            -moz-transition: all .3s ease 0s;
-            -o-transition: all .3s ease 0s;
-            transition: all .3s ease 0s;
-        }
-
         label {
             margin-left: 20px;
-            width: 300px;
+            /* width: 300px; */
             display: inline-block;
             margin-right: 100px;
         }
@@ -131,50 +117,15 @@
             margin-bottom: 0.5rem;
         }
 
-        body {
-            font-family: 'Circular-Book', sans-serif;
-            background-color: white;
-            /* padding-top: 114px; */
-
-            font-size: 16px;
-        }
+       
 
         .content p {
             margin: 20px 0px;
         }
     </style>
 
+    <?php include 'header.php' ; ?>
 
-    <div>
-        <header class="container-fluid navbar-style">
-            <nav class="navbar navbar-expand-lg navbar-style">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="index.html">
-                        <h2>The Interiors<em>.</em></h2>
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarResponsive">
-                        <ul id="navbar-div" class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="home.php">Home
-                                    <span class="sr-only">(current)</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="orders.php">My orders</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="home.php">Log out</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
-    </div>
 
 
 </head>
@@ -190,10 +141,11 @@
                         <aside class="sidebar" id="sidebar" data-plugin-sticky="" data-plugin-options="{'minWidth': 991, 'containerSelector': '.container', 'padding': {'top': 110}}">
 
                             <h2 class="heading-primary">Hire Us</h2>
-
                             <ul>
+                                <label for="contact">
 
-                                <li><a class="" href="contact.php">Request a call</a></li>
+                                    <li><a class="" href="contact.php">Request a call</a></li>
+                                </label>
                                
                             </ul>
 
@@ -203,7 +155,7 @@
 
                         <div class="row">
                             <div class="col">
-                                <h1>Request a free estimate</h1>
+                                <h1 style=" margin :20px 0px;">Request a free estimate</h1>
                                 <form action="request-response.php" method="post">
                                     <input type="hidden" name="submitForm" value="1">
                                     <p class="lead">Talk to us to learn more or to get your project started now!</p>
@@ -267,7 +219,7 @@
 
                                     <div class="form-group">
                                         <label  for="comments">
-                                            <h2 >  Describe your project and requirements  </h2>
+                                            <h2 style="display: block;" >  Describe your project and requirements  </h2>
                                         </label>
 
                                         <textarea required rows="6" id="comments" class="form-control" name="comments"></textarea>
@@ -275,7 +227,7 @@
 
 
                                     <br>
-                                    <div><input type="submit" value="Submit Quote" class="btn btn-primary" id="request-free-quote-button"></div>
+                                    <div><input type="submit" value="Submit Quote" class="btn btn-lg" id="request-free-quote-button"></div>
 
                                 </form>
                                 <p></p>
@@ -307,23 +259,3 @@
 
 </html>
 
-<?php
-
-if (isset($_REQUEST['submit'])) {
-    $name = $_REQUEST['name'];
-    $email = $_REQUEST['email'];
-    $phone = $_REQUEST['phone'];
-    $phone = $_REQUEST['budget'];
-
-    $timeframe = $_REQUEST['timeframe'];
-    $budget = $_REQUEST['budget'];
-
-    $service_name = $_REQUEST['service_name_field'];
-    $service_detail = $_REQUEST['service_request_field'];
-    $requirements = $_REQUEST['comments'];
-
-
-}
-
-
-?>

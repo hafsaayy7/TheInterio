@@ -19,7 +19,7 @@
 <body>
 
     <?php
-    $connection = mysqli_connect("localhost", "root", "");
+    $connection = mysqli_connect("localhost", "root", "" , "theinterior");
 
     if (!$connection) {
         die('Could not connect: ' . mysqli_connect_error());
@@ -55,7 +55,7 @@
         else {
             $query = "INSERT INTO `theinterior`.`user` (`username`, `email`, `password`,`firstname`,`lastname`) VALUES ('$username', '$email', '$password','$firstname','$lastname')";
             mysqli_query($connection, $query);
-            header("Location: http://localhost/TheInterio/PHP/service.php");
+            header("Location: http://localhost/TheInterio/PHP/afterlogin.php?firstname=".$firstname.'&lastname='.$lastname);
             echo "<h1>Registered successfully!</h1>";
         }
     }

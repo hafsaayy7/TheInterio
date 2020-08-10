@@ -24,15 +24,16 @@
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                            <a class="nav-link" href="service.php">request estimate</a>
-                        </li>
+                   
                     <li class="nav-item">
                         <a class="nav-link" href="blog.php">Blog</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link login_window_button" href="#">Login</a>
                     </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="service.php">request estimate</a>
+                        </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.php">Contact Us</a>
                 </ul>
