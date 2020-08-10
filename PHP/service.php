@@ -227,7 +227,7 @@
 
 
                                     <br>
-                                    <div><input type="submit" value="Submit Quote" class="btn btn-lg" id="request-free-quote-button"></div>
+                                    <div><input type="submit" value="Submit Quote" class="btn btn-lg" ></div>
 
                                 </form>
                                 <p></p>
