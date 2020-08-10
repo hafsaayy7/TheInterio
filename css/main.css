@@ -5,10 +5,10 @@
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
-@font-face {
-  font-family: Ubuntu-Bold;
-  src: url('../fonts/ubuntu/Ubuntu-Bold.ttf'); 
-}
+/* @font-face { */
+  /* font-family: Ubuntu-Bold; */
+  /* src: url('../fonts/ubuntu/Ubuntu-Bold.ttf');  */
+/* } */
 
 
 
@@ -106,7 +106,8 @@ textarea:-ms-input-placeholder { color: #bdbdd3;}
 button {
 	outline: none !important;
 	border: none;
-	background: transparent;
+  background: transparent;
+  color: aquamarine;
 }
 
 button:hover {
@@ -293,7 +294,9 @@ textarea.input100 {
   -o-transform: translateX(-50%);
   transform: translateX(-50%);
   border-radius: 31px;
-  background-color: #827ffe;
+  /* background-color: #827ffe; */
+  /* color: #827ffe; */
+  background-color: #00cca3;
   pointer-events: none;
   
   -webkit-transition: all 0.4s;
@@ -303,7 +306,8 @@ textarea.input100 {
 }
 
 .contact100-form-btn:hover:before {
-  background-color: #403866;
+  background-color: #00cca3;
+  /* color: #403866; */
   width: calc(100% + 20px);
 }
 

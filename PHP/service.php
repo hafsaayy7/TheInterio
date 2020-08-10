@@ -156,8 +156,8 @@
                         <div class="row">
                             <div class="col">
                                 <h1 style=" margin :20px 0px;">Request a free estimate</h1>
-                                <form action="request-response.php" method="post">
-                                    <input type="hidden" name="submitForm" value="1">
+                                <form action="request-response.php" method="POST">
+                                    <!-- <input type="hidden" name="submitForm" value="1"> -->
                                     <p class="lead">Talk to us to learn more or to get your project started now!</p>
 
                                     <p>We'd love to hear more about your project and find out how we can best support you.</p>

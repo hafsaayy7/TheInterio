@@ -4,10 +4,10 @@
 	<title>Contact V10</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../css/util.css">
+	<!-- <link rel="stylesheet" type="text/css" href="../css/util.css"> -->
 	<link rel="stylesheet" type="text/css" href="../css/main.css">
-	<link rel="stylesheet" href="../css/home.css">
-	<link rel="stylesheet" type="text/css" href="../css/blog.css">
+	<!-- <link rel="stylesheet" href="../css/home.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="../css/blog.css"> -->
 	<link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css" rel="stylesheet" type="text/css" />
 	<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
 	<script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>

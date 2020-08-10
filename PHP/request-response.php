@@ -4,7 +4,8 @@
 <?php include 'header.php';
 
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['submit']) == true) {
+    echo " i am in submit form";
     $name = $_POST['name'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];

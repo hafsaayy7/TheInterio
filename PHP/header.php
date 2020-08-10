@@ -1,7 +1,7 @@
 <!-- <link type="text/css" href="..\css\home.css" rel="stylesheet"> -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <script src="https://kit.fontawesome.com/d40bc104d7.js" crossorigin="anonymous"></script>
-
+<link rel="stylesheet" type="text/css" href="../css/main.css">
 <link rel="stylesheet" type="text/css" href="..\css\home.css">
 <link rel="stylesheet" type="text/css" href="..\css\blog.css">
 
@@ -32,7 +32,7 @@
                         <a class="nav-link login_window_button" href="#">Login</a>
                     </li>
                     <li class="nav-item">
-                            <a class="nav-link" href="service.php">request estimate</a>
+                            <a class="nav-link" href="service.php">Request estimate</a>
                         </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.php">Contact Us</a>
