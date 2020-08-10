@@ -17,13 +17,13 @@
 
 
     <style>
-        body {
+         body {
             font-family: 'Roboto', sans-serif;
             overflow-x: hidden;
             text-rendering: optimizeLegibility;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-        }
+        } 
 
         p {
             margin-bottom: 0px;
@@ -88,7 +88,7 @@
         <header class="container-fluid navbar-style">
             <nav class="navbar navbar-expand-lg navbar-style">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="home.php">
+                    <a class="navbar-brand" href="index.php">
                         <h2>The Interiors<em>.</em></h2>
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -96,17 +96,13 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul id="navbar-div" class="navbar-nav ml-auto">
-                            <!-- <li class="nav-item">
-                                <a class="nav-link" href="afterlogin.php">Home
-                                    <span class="sr-only">(current)</span>
-                                </a>
-                            </li> -->
+                         
                             <li class="nav-item">
                                 <a class="nav-link" href="orders.php">My orders</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="home.php">Log out</a>
+                                <a class="nav-link" href="index.php">Log out</a>
                             </li>
                         </ul>
                     </div>

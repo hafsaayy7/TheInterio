@@ -11,25 +11,14 @@ $email = $_POST['email'];
 $phone = $_POST['phone'];
 // $phone = $_POST['budget'];
 
-$timeframe = $_POST['timeframe'];
-$budget = $_POST['budget'];
-
-// $service_name = $_POST['service_name_field'];
-// $service_detail = $_POST['service_request_field'];
-$requirements = $_POST['comments'];
+$message = $_POST['message'];
 
 
-// INSERT INTO `request`(`nam`, `email`, `phone-no`, `timeframe`, `budget`, `project-requirements`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6])
-
-
-    $query = "INSERT INTO `theinterior`.`request`(`name`, `email`, `phone-no`,`timeframe`,`budget` , `project-requirements`) VALUES ('$name', '$email', '$phone','$timeframe','$budget' , '$requirements')";
-    // mysqli_query($connect, $query);
-
-    // run your code here
-
+$query = "INSERT INTO `theinterior`.`contact`(`name`, `email`, `contact`,`message`) VALUES ('$name', '$email', '$phone','$message')";
+    
 
     if(mysqli_query($connect, $query)){
-        echo '<h2 class = "container" style =" margin:  auto ; font-size : 30px">Thank You !! We have recieved Your request . We will contact you shortly</h2>';
+        echo '<h2 class = "container" style =" margin:  auto ; font-size : 30px">Thank You !! We will contact you shortly</h2>';
         // echo "Records inserted successfully.";
     } else{
         echo "ERROR: Could not able to execute $sql. " . mysqli_error($connect);

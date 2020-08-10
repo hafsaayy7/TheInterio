@@ -25,7 +25,7 @@
 	<div class="container-contact100">
 
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form" action="http://localhost/TheInterio/PHP/contact.php" method="POST">
+			<form class="contact100-form validate-form" action="contact-form-response.php" method="POST">
 				<span class="contact100-form-title">
 					Send Us A Message
 				</span>
@@ -41,12 +41,12 @@
 				</div>
 
 				<div class="wrap-input100 validate-input" data-validate = "Please enter your phone">
-					<input class="input100" type="number" name="phone" placeholder="Phone" pattern="[0-9]{11}">
+					<input class="input100" type="number" name="phone" placeholder="Phone" required pattern="[0-9]{11}">
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input" data-validate = "Please enter your message">
-					<textarea class="input100" name="message" placeholder="Your Message"></textarea>
+					<textarea class="input100" name="message" placeholder="Your Message" required></textarea>
 					<span class="focus-input100"></span>
 				</div>
 
