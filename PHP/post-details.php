@@ -15,7 +15,7 @@ include 'header.php'
     <link rel="stylesheet" href="../css/blog.css">
     <link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css" rel="stylesheet" type="text/css" />
     <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-    <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script> -->
+    <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script> 
 
 
     <title>Blog Details</title>
@@ -24,9 +24,15 @@ include 'header.php'
 </head>
 
 <style>
-    .blog-post p , .blog-post h2 , .blog-post li {
+    .blog-post p , .blog-post h2 , .blog-post li, .blog-post img{
         margin: 20px 0px;
 
+    }
+
+    .blog-post h2{
+        color: #00cca3;
+        font-size: 32px;
+     
     }
 </style>
 
@@ -47,7 +53,7 @@ function get_recent_post($connect){
 
 
     $output .=  '   <li>
-    <a href="post-details.php?id= '.$row['id'].'">
+    <a href="post-details.php?id='.$row['id'].'">
     <h5> '. $row['title'].' </h5>
     <span>May 31, 2020</span>
   </a></li>';
@@ -74,12 +80,9 @@ function get_blogpost($connect)
       </div>
       <div class="down-content">
         <span>Category</span>
-        <a href="post-details.html">
           <h2>' . $row['title'] . '</h2>
-        </a>
         <ul class="post-info">
-          <li><a href="#">Admin</a></li>
-         
+          <li>Admin</li>
           <li><a href="#">' . $row['comments'] . '</a></li>
         </ul>
         <p >' . $row['discription'] . '</p>
@@ -108,7 +111,6 @@ function get_blogpost($connect)
 
             <?php echo get_blogpost($connect) ;?>
             
-
             <div class="col-lg-4">
           <div class="sidebar">
             <div class="row">
@@ -127,7 +129,7 @@ function get_blogpost($connect)
                   </div>
                 </div>
               </div>
-              <div class="col-lg-12">
+              <!-- <div class="col-lg-12">
                 <div class="sidebar-item categories">
                   <div class="sidebar-heading">
                     <h2>Categories</h2>
@@ -143,7 +145,7 @@ function get_blogpost($connect)
                     </ul>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
             </div>
           </div>

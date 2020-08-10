@@ -151,19 +151,9 @@ function image_card($connect)
 </head>
 
 <body>
-    <div id="top_div">
-        <div id="title-div">
-            <h3>The Interiors</h3>
-        </div>
-        <div id="navbar-div">
-            <li><a href="home.php">Home</a></li>
-            <li><a href="service.php">Hire Us</a></li>
-            <li><a href="blog.php">Blog</a></li>
-            <li><a href="#" class="login_window_button">Login</a></li>
-            <li><a href="..\ContactFrom_v10\ContactFrom_v10\index.html">Contact</a></li>
-        </div>
-    </div>
+<?php include 'header.php' ?>
 
+  
     <div class="container-fluid ">
 
         <br />
@@ -327,9 +317,7 @@ function image_card($connect)
                     <p>Door design</p>
                     <p>Consultation</p>
                     <p>Garden design</p>
-
-
-                    <p><button class="btn btn-lg">Order now</button></p>
+                    <p><a href="service.php"><button class="btn btn-lg">Order now</button></a></p>
                 </div>
             </div>
 
@@ -338,15 +326,12 @@ function image_card($connect)
                     <span>$100</span>
                 </div>
                 <div class="text-center">
-
                     <p>per month</p>
                     <h2>Silver</h2>
-
                     <p>floor design</p>
                     <p>Home design</p>
                     <p>Garden design</p>
-
-                    <p><button class="btn btn-lg">Order now</button></p>
+                    <p><a href="service.php"><button class="btn btn-lg">Order now</button></a></p>
                 </div>
             </div>
             <div class="card col-lg-3 col-sm-12 col-md-6">
@@ -354,13 +339,12 @@ function image_card($connect)
                     <span>$150</span>
                 </div>
                 <div class="text-center">
-
                     <p>per month</p>
                     <h2>Silver</h2>
                     <p>Home design</p>
                     <p>Garden design</p>
                     <p>Kitchen design</p>
-                    <p><button class="btn btn-lg">Order now</button></p>
+                    <p><a href="service.php"><button class="btn btn-lg">Order now</button></a></p>
                 </div>
             </div>
 
@@ -370,15 +354,12 @@ function image_card($connect)
                 </div>
 
                 <div class="text-center">
-
-
                     <p>per month</p>
                     <h2>Platinum</h2>
-
                     <p>Home design</p>
                     <p>Interior design</p>
                     <p>Exterior design</p>
-                    <p><button class="btn btn-lg">Order now</button></p>
+                    <p><a href="service.php"><button class="btn btn-lg">Order now</button></a></p>
                 </div>
             </div>
 
@@ -399,6 +380,7 @@ function image_card($connect)
 </body>
 
 </html>
+
 
 
 

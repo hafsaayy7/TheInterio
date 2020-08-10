@@ -18,7 +18,7 @@
 
     <title>Interio Blog Posts</title>
 
-   
+
 
 </head>
 
@@ -26,11 +26,8 @@
 
 
 
-    <!-- Header -->
-
     <div>
 
-        
         <nav class="navbar navbar-expand-lg navbar-style">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">
@@ -41,18 +38,12 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul id="navbar-div" class="navbar-nav ml-auto">
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" href="home.html">Home
-                                <span class="sr-only">(current)</span>
-                            </a>
-                        </li> -->
+
                         <li class="nav-item">
                             <a class="nav-link" href="orders.php">My orders</a>
                         </li>
+                        
                         <li class="nav-item">
-                            <a class="nav-link" href="service.php">request estimate</a>
-                        </li>
-                                                <li class="nav-item">
                             <a class="nav-link" href="home.php">Log out</a>
                         </li>
                     </ul>
@@ -68,20 +59,19 @@
         $lastname = $_REQUEST['lastname'];
 
 
-        echo "<h2> Welcome  " . $firstname .' ' .$lastname .' </h2>' ;
+        echo "<h2> Welcome  " . $firstname . ' ' . $lastname . ' </h2>';
         ?>
     </div>
 
 
 
-    </body>
- 
-    <footer style="margin-top: auto;" id = "footer" class="footer-1">
-    <script>
-      $('#footer').load('footer.html');
+</body>
 
+<footer style="margin-top: auto;" id="footer" class="footer-1">
+    <script>
+        $('#footer').load('footer.html');
     </script>
-  </footer>
+</footer>
 
 </body>
 

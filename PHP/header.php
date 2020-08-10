@@ -19,23 +19,24 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul id="navbar-div" class="navbar-nav ml-auto">
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="home.html">Home
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.php">Home
                             <span class="sr-only">(current)</span>
                         </a>
-                    </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../PHP/home.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../PHP/service.php">request estimate</a>
+                            <a class="nav-link" href="service.php">request estimate</a>
+                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.php">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../PHP/blog.php">Blog</a>
+                        <a class="nav-link login_window_button" href="#">Login</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.php">Contact Us</a>
                 </ul>
             </div>
         </div>
     </nav>
 </div>
-

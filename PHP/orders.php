@@ -96,11 +96,11 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul id="navbar-div" class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="home.php">Home
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="afterlogin.php">Home
                                     <span class="sr-only">(current)</span>
                                 </a>
-                            </li>
+                            </li> -->
                             <li class="nav-item">
                                 <a class="nav-link" href="orders.php">My orders</a>
                             </li>
