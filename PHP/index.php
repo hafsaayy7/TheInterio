@@ -1,6 +1,5 @@
 <?php
-// include 'footer.php';
-//index.php
+
 $connect = mysqli_connect("localhost", "root", "", "theinterior");
 function make_query($connect)
 {
@@ -50,7 +49,6 @@ function make_slides($connect)
     return $output;
 }
 
-
 function service_query($connect)
 {
     $service_query_result = mysqli_query($connect, "SELECT * FROM services");
@@ -87,7 +85,7 @@ function image_card($connect)
         $output .= '<div class="card col-lg-3 col-sm-12 col-md-6 team-member">
         <div style="margin: 20px 0px">
 
-            <img class="img-responsive" ' . 'src=' . '../images/' . $row['picture'] . ' style=min-width: 100%;>
+            <img class="mr-auto ml-auto img-responsive" ' . 'src=' . '../images/' . $row['picture'] . ' style=min-width: 100%;>
         </div>
         <div class="text-center">' . '
 
@@ -104,56 +102,32 @@ function image_card($connect)
 
 ?>
 
-<!-- <html lang="en"> -->
+
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <title>Interiors</title>
-    <!-- Adding bootstrap -->
-    <link type="text/css" href="..\css\home.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://kit.fontawesome.com/d40bc104d7.js" crossorigin="anonymous"></script>
-    <!--Adding font aswome icons CDN-->
-    <script src="./slideshow.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/blog.css">
     <link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css" rel="stylesheet" type="text/css" />
     <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
     <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
 
-    <script>
-        var selected_button = '';
-
-        $(function() {
-            $(".login_window_button").click(function() {
-                $(".login_window_model").modal('show');
-                selected_button = "login";
-            });
-            $(".login_window_model").modal({
-                closable: true
-            });
-        });
-        $(function() {
-            $(".signup_window_button").click(function() {
-                $(".signup_window_model").modal('show');
-                selected_button = "signup";
-            });
-            $(".signup_window_model").modal({
-                closable: true
-            });
-        });
-    </script>
 
 </head>
 
 <body>
-<?php include 'header.php' ?>
+    <?php include 'header.php' ?>
 
-  
+
     <div class="container-fluid ">
 
         <br />
@@ -162,7 +136,7 @@ function image_card($connect)
                 <?php echo make_slide_indicators($connect); ?>
             </ol>
 
-            <div  class="carousel-inner" style ="max-height: 600px;">
+            <div class="carousel-inner" style="max-height: 600px;">
                 <?php echo make_slides($connect); ?>
             </div>
             <a class="left carousel-control" href="#dynamic_slide_show" data-slide="prev">
@@ -179,7 +153,6 @@ function image_card($connect)
     </div>
 
     <!-- SLide show ends here -->
-
 
     <div class="claim_design">
 
@@ -209,8 +182,6 @@ function image_card($connect)
     <div class="container">
 
         <div class="row">
-
-
             <?php echo service_query($connect); ?>
 
             <!-- Service code result from db -->
@@ -243,19 +214,14 @@ function image_card($connect)
     <div class="container section-header">
 
         <!-- Our group -->
-
         <div class="row">
             <div class="col-sm-6 wow" style="visibility: visible; animation-name: fadeInLeft;">
                 <img class="img-responsive" src="../images\group of architect.jpg" alt="">
             </div>
-
             <div class="col-sm-6">
                 <h3 class="column-title">Our Awesome Group</h3>
                 <p>TheInterior was established 39 years ago offering basic corporate interior works. Since then we have expanded and diversified to cover all aspects of corporate design and finishing. Our client list includes government offices, embassies, leading multinational firms, banks, hotels, architects and consultancies. We offer a flexible approach to your business environment requirements and the provision of a quality and reliable service that places a premium on customer satisfaction and the maintenance of long-term relationships with our clients. IH offers a comprehensive range of commercial development & finishing services, full civil, electrical and build services, partitioning, flooring, ceilings and decoration that combine to deliver a first class package. Most of the works are carried out ‘in house’, through IH own directly employed divisions. This allows us to guarantee tight control over programmed schedules and quality of work. We feel certain that IH is capable of utilizing all skills and experience to create the complete and perfect business environment that you require</p>
-
-
                 <a class="btn btn-color" href="#">Learn More</a>
-
             </div>
         </div>
     </div>
@@ -269,17 +235,16 @@ function image_card($connect)
         <div class="text-center">
             <h3>Our Best Team</h3>
             <svg width="150" height="10" xmlns="http://www.w3.org/2000/svg">
-
                 <path d="M 10 10 L 300 10" stroke="#05BA8E" />
             </svg>
             <p>Meet our best team</p>
         </div>
     </div>
+
     <div id="team" class="container price-card-container">
         <div class="row">
             <?php echo image_card($connect); ?>
         </div>
-
     </div>
 
     <!-- Team section ends here -->
@@ -290,28 +255,20 @@ function image_card($connect)
         <div class="text-center">
             <h3>Our pricing</h3>
             <svg width="200" height="10" xmlns="http://www.w3.org/2000/svg">
-
                 <path d="M 10 10 L 300 10" stroke="#05BA8E" />
             </svg>
-
         </div>
-
     </div>
 
     <!-- Pricing container -->
 
-    <div class="container price-card-container">
-
+    <div style="margin: 10px auto;" class="container price-card-container">
         <div class="row">
-
-
-
             <div id="pricing" class="card col-lg-3 col-sm-12 col-md-6">
                 <div class="text-center mr-auto ml-auto pricing">
                     <span>$40</span>
                 </div>
-                <div class="text-center">
-
+                <div style="margin-bottom: 10px;" class="text-center">
                     <p>per month</p>
                     <h2>Basic</h2>
                     <p>Door design</p>
@@ -320,12 +277,11 @@ function image_card($connect)
                     <p><a href="service.php"><button class="btn btn-lg">Order now</button></a></p>
                 </div>
             </div>
-
-            <div class="card col-lg-3 col-sm-12 col-md-6">
+            <div style="margin-bottom: 10px;" class="card col-lg-3 col-sm-12 col-md-6">
                 <div class="text-center ml-auto mr-auto pricing">
                     <span>$100</span>
                 </div>
-                <div class="text-center">
+                <div style="margin-bottom: 10px;" class="text-center">
                     <p>per month</p>
                     <h2>Silver</h2>
                     <p>floor design</p>
@@ -334,11 +290,11 @@ function image_card($connect)
                     <p><a href="service.php"><button class="btn btn-lg">Order now</button></a></p>
                 </div>
             </div>
-            <div class="card col-lg-3 col-sm-12 col-md-6">
+            <div style="margin-bottom: 10px;" class="card col-lg-3 col-sm-12 col-md-6">
                 <div class="text-center ml-auto mr-auto pricing">
                     <span>$150</span>
                 </div>
-                <div class="text-center">
+                <div style="margin-bottom: 10px;" class="text-center">
                     <p>per month</p>
                     <h2>Silver</h2>
                     <p>Home design</p>
@@ -347,13 +303,11 @@ function image_card($connect)
                     <p><a href="service.php"><button class="btn btn-lg">Order now</button></a></p>
                 </div>
             </div>
-
-            <div class="card col-lg-3 col-sm-12 col-md-6">
+            <div style="margin-bottom: 10px;" class="card col-lg-3 col-sm-12 col-md-6">
                 <div class="text-center ml-auto mr-auto pricing">
                     <span>$200</span>
                 </div>
-
-                <div class="text-center">
+                <div style="margin-bottom: 10px;" class="text-center">
                     <p>per month</p>
                     <h2>Platinum</h2>
                     <p>Home design</p>
@@ -362,25 +316,18 @@ function image_card($connect)
                     <p><a href="service.php"><button class="btn btn-lg">Order now</button></a></p>
                 </div>
             </div>
-
         </div>
-
     </div>
 
     <!-- Pricing container ends here  -->
 
-    <footer id = "footer" class="footer-1">
-    <script>
-      $('#footer').load('footer.html');
-
-    </script>
-  </footer>
+    <footer style="margin-top: auto;" id="footer" class="footer-1">
+        <script>
+            $('#footer').load('footer.html');
+        </script>
+    </footer>
 
 
 </body>
 
 </html>
-
-
-
-

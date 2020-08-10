@@ -30,11 +30,11 @@
 
         <nav class="navbar navbar-expand-lg navbar-style">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">
+                <a  class="navbar-brand" href="index.html">
                     <h2>The Interiors<em>.</em></h2>
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggle ml-auto" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span style="font-size: 28px; color : #00cca3"><i class="fa fa-caret-square-o-down" aria-hidden="true"></i></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul id="navbar-div" class="navbar-nav ml-auto">
@@ -44,7 +44,7 @@
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="home.php">Log out</a>
+                            <a class="nav-link" href="index.php">Log out</a>
                         </li>
                     </ul>
                 </div>

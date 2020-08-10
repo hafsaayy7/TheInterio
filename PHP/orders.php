@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    <!-- <link rel="stylesheet" href="../css/order.css"> -->
     <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" /> -->
     <link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css" rel="stylesheet" type="text/css" />
     <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
@@ -16,100 +18,69 @@
 
 
 
-    <style>
-         body {
-            font-family: 'Roboto', sans-serif;
-            overflow-x: hidden;
-            text-rendering: optimizeLegibility;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        } 
-
-        p {
-            margin-bottom: 0px;
-            font-size: 15px;
-            font-weight: 400;
-            color: #7a7a7a;
-            line-height: 30px;
-        }
-
-        .navbar-style {
-            background-color: #121212;
-            color: white;
-            /* background: black; */
-        }
-
-        button {
-            margin: 20px;
-            width: 140px;
-        }
-
-        ul {
-            padding: 0;
-            margin: 0;
-            list-style: none;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            margin: 0px;
-        }
-
-        .navbar .navbar-brand h2 {
-            color: #00cca3;
-            text-transform: uppercase;
-            font-size: 24px;
-            font-weight: 900;
-            -webkit-transition: all .3s ease 0s;
-            -moz-transition: all .3s ease 0s;
-            -o-transition: all .3s ease 0s;
-            transition: all .3s ease 0s;
-        }
-
-
-
-        .order-heading,
-        .tabcontent {
-            margin: 20px;
-            font-size: 24px;
-        }
-
-        .tabcontent p {
-            margin: 10px 0px;
-        }
-    </style>
+ 
     <title>Orders</title>
 
-    <div>
-        <header class="container-fluid navbar-style">
-            <nav class="navbar navbar-expand-lg navbar-style">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="index.php">
-                        <h2>The Interiors<em>.</em></h2>
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarResponsive">
-                        <ul id="navbar-div" class="navbar-nav ml-auto">
-                         
-                            <li class="nav-item">
-                                <a class="nav-link" href="orders.php">My orders</a>
-                            </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.php">Log out</a>
-                            </li>
-                        </ul>
-                    </div>
+    <div>
+
+        <nav class="navbar navbar-expand-lg navbar-style">
+            <div class="container-fluid">
+                <a  class="navbar-brand" href="index.html">
+                    <h2>The Interiors<em>.</em></h2>
+                </a>
+                <button class="navbar-toggle ml-auto" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span style="font-size: 28px; color : #00cca3"><i class="fa fa-caret-square-o-down" aria-hidden="true"></i></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul id="navbar-div" class="navbar-nav ml-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="orders.php">My orders</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php">Log out</a>
+                        </li>
+                    </ul>
                 </div>
-            </nav>
-        </header>
+            </div>
+        </nav>
     </div>
+  
+
+
+<!-- 
+    <div>
+
+        <nav class="navbar navbar-expand-lg navbar-style">
+
+
+            <a style="margin-left: 0; display: inline-block;" class="mr-auto navbar-brand" href="index.php">
+                <h2>The Interiors<em>.</em></h2>
+            </a>
+
+            <button style="font-size: 5vw;" class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span style="color: #00cca3;" ><i class="fa fa-caret-square-o-down" aria-hidden="true"></i></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse ml-auto" id="navbarResponsive">
+
+                <ul id="navbar-div" class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="orders.php">My orders</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php">Log out</a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    </div>
+ -->
 
 
 
@@ -118,11 +89,14 @@
 <body style="display: flex; flex-direction: column; min-width: 100%;" class="">
     <div class="container">
         <h2 class="order-heading">Manage orders</h2>
-        <div class="">
-            <button class="tablink btn btn-lg" onclick="openPage('active_orders', this)">Active</button>
+        <div class="row">
+            <div class="col-sm-12 col-md-12">
+
+                <button class="tablink btn btn-lg" onclick="openPage('active_orders', this)">Active</button>
             <button class="tablink btn btn-lg" onclick="openPage('completed_orders', this)" id="defaultOpen">Completed</button>
             <button class="tablink btn btn-lg" onclick="openPage('cancelled_orders', this)">Cancelled</button>
-
+        </div>
+            
         </div>
         <!-- <button class="tablink" onclick="openPage('About', this, 'orange')">About</button> -->
 

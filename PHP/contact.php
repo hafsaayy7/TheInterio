@@ -12,24 +12,20 @@
 	<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
 	<script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
 </head>
-<body>
+<body style=" min-height: 100%;  display: flex; flex-direction: column;">
 	
 
 <div>
 	<?php include 'header.php'; ?>
 
 </div>
-
-
-
-	<div class="container-contact100">
+	<div class="container container-contact100">
 
 		<div class="wrap-contact100">
 			<form class="contact100-form validate-form" action="contact-form-response.php" method="POST">
 				<span class="contact100-form-title">
 					Send Us A Message
 				</span>
-
 				<div class="wrap-input100 validate-input" data-validate="Please enter your name">
 					<input class="input100" type="text" name="name" placeholder="Full Name" required="required" pattern="^[a-zA-Z ]*$">
 					<span class="focus-input100"></span>
@@ -50,8 +46,8 @@
 					<span class="focus-input100"></span>
 				</div>
 
-				<div class="container-contact100-form-btn">
-					<button class="contact100-form-btn">
+				<div class="ml-auto mr-auto container-contact100-form-btn">
+					<button class=" text-center contact100-form-btn">
 						<span>
 							<i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
 							Send
@@ -65,16 +61,16 @@
 
 
 
-</body>
 
-<footer id = "footer" class="footer-1">
+
+<footer style="margin-top: auto;" id = "footer" class="footer-1">
     <script>
       $('#footer').load('footer.html');
 
     </script>
   </footer>
 
-
+  </body>
 
 </html>
 
