@@ -1,13 +1,15 @@
 <?php
 
-$connect = mysqli_connect("localhost", "root", "", "theinterior");
-function make_query($connect)
+$connect = mysqli_connect("localhost", "root", "", "theinterior"); // connect with db
+
+function make_query($connect) //this function will retrieve all images from database 
 {
     $query = "SELECT * FROM images";
     $result = mysqli_query($connect, $query);
     return $result;
 }
 
+//this function creates a slider 
 function make_slide_indicators($connect)
 {
     $output = '';
@@ -28,6 +30,7 @@ function make_slide_indicators($connect)
     return $output;
 }
 
+// displaying images(that have been retrieved from db ) in slides 
 function make_slides($connect)
 {
     $output = '';
@@ -35,6 +38,7 @@ function make_slides($connect)
     $result = make_query($connect);
     while ($row = mysqli_fetch_array($result)) {
         if ($count == 0) {
+            // for first image using active class of bootstrap to display by default 
             $output .= '<div class="item active">';
         } else {
             $output .= '<div class="item">';
@@ -49,6 +53,7 @@ function make_slides($connect)
     return $output;
 }
 
+// this function retrieve list of services from db and creates an html div which will display it  
 function service_query($connect)
 {
     $service_query_result = mysqli_query($connect, "SELECT * FROM services");
@@ -76,22 +81,23 @@ function service_query($connect)
     return $service_output;
 }
 
+// this function shows information about team members
+// retrieving images , name  nad role of person from db 
+
 function image_card($connect)
 {
     $output = '';
     $count = 0;
     $result = mysqli_query($connect, "SELECT * FROM team");
     while ($row = mysqli_fetch_array($result)) {
+        // html div to display information of team member
         $output .= '<div class="card col-lg-3 col-sm-12 col-md-6 team-member">
         <div style="margin: 20px 0px">
-
             <img class="mr-auto ml-auto img-responsive" ' . 'src=' . '../images/' . $row['picture'] . ' style=min-width: 100%;>
         </div>
         <div class="text-center">' . '
-
             <h2>' . $row['name'] . '</h2>
             <p>' . $row['role'] . '</p>
-
         </div>
     </div>';
 
@@ -128,6 +134,8 @@ function image_card($connect)
     <?php include 'header.php' ?>
 
 
+    <!-- image slider starts here -->
+
     <div class="container-fluid ">
 
         <br />
@@ -152,7 +160,10 @@ function image_card($connect)
         </div>
     </div>
 
+
     <!-- SLide show ends here -->
+
+
 
     <div class="claim_design">
 
@@ -191,6 +202,8 @@ function image_card($connect)
     </div>
 
     <!-- OUr services section ends here -->
+
+
 
     <!-- About Us Section starts here  -->
 
@@ -320,6 +333,10 @@ function image_card($connect)
     </div>
 
     <!-- Pricing container ends here  -->
+
+
+
+    <!-- using jquerry to load footer  -->
 
     <footer style="margin-top: auto;" id="footer" class="footer-1">
         <script>

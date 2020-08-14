@@ -10,27 +10,18 @@
     <link rel="stylesheet" href="../css/blog.css">
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
-
     <link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css" rel="stylesheet" type="text/css" />
     <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
     <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
 
-    <title>Interio Blog Posts</title>
-
-
-
+    <title>Welcome</title>
 </head>
 
 <body style="display: flex; flex-direction: column; min-height: 100%;">
-
-
-
     <div>
-
         <nav class="navbar navbar-expand-lg navbar-style">
             <div class="container-fluid">
-                <a  class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="index.html">
                     <h2>The Interiors<em>.</em></h2>
                 </a>
                 <button class="navbar-toggle ml-auto" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,11 +29,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul id="navbar-div" class="navbar-nav ml-auto">
-
                         <li class="nav-item">
                             <a class="nav-link" href="orders.php">My orders</a>
                         </li>
-                        
                         <li class="nav-item">
                             <a class="nav-link" href="index.php">Log out</a>
                         </li>
@@ -51,20 +40,17 @@
             </div>
         </nav>
     </div>
-
-
     <div>
         <?php
+        // display first and last name of user 
         $firstname = $_REQUEST['firstname'];
         $lastname = $_REQUEST['lastname'];
+        //here using request to avoid get and POst method conflict ...
 
-
-        echo "<h2> Welcome  " . $firstname . ' ' . $lastname . ' </h2>';
+        // display first name and last name
+        echo '<h2 class = "container" style =" margin:  auto ; font-size : 30px" > Welcome  ' . $firstname . ' ' . $lastname . ' </h2>';
         ?>
     </div>
-
-
-
 </body>
 
 <footer style="margin-top: auto;" id="footer" class="footer-1">

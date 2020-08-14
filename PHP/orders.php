@@ -1,7 +1,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/d40bc104d7.js" crossorigin="anonymous"></script>
@@ -9,24 +8,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/blog.css">
-    <!-- <link rel="stylesheet" href="../css/order.css"> -->
-    <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" /> -->
     <link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css" rel="stylesheet" type="text/css" />
     <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
     <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
-
-
-
-
- 
     <title>Orders</title>
 
+<!-- Navbar starts here -->
 
     <div>
-
         <nav class="navbar navbar-expand-lg navbar-style">
             <div class="container-fluid">
-                <a  class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="index.php">
                     <h2>The Interiors<em>.</em></h2>
                 </a>
                 <button class="navbar-toggle ml-auto" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,11 +26,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul id="navbar-div" class="navbar-nav ml-auto">
-
                         <li class="nav-item">
                             <a class="nav-link" href="orders.php">My orders</a>
                         </li>
-                        
                         <li class="nav-item">
                             <a class="nav-link" href="index.php">Log out</a>
                         </li>
@@ -47,56 +37,23 @@
             </div>
         </nav>
     </div>
-  
-
-
-<!-- 
-    <div>
-
-        <nav class="navbar navbar-expand-lg navbar-style">
-
-
-            <a style="margin-left: 0; display: inline-block;" class="mr-auto navbar-brand" href="index.php">
-                <h2>The Interiors<em>.</em></h2>
-            </a>
-
-            <button style="font-size: 5vw;" class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span style="color: #00cca3;" ><i class="fa fa-caret-square-o-down" aria-hidden="true"></i></span>
-            </button>
-
-
-            <div class="collapse navbar-collapse ml-auto" id="navbarResponsive">
-
-                <ul id="navbar-div" class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="orders.php">My orders</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">Log out</a>
-                    </li>
-                </ul>
-
-            </div>
-        </nav>
-    </div>
- -->
-
-
-
+<!--Navbar ends here  -->
 </head>
 
 <body style="display: flex; flex-direction: column; min-width: 100%;" class="">
+<!-- using flex because i want footer to remain at bottom without making it absolute ... and chaing flex direction to column because
+default direction is row in flex -->
     <div class="container">
         <h2 class="order-heading">Manage orders</h2>
         <div class="row">
+            <!-- creating a tab to display differnet div by clicking a button  -->
             <div class="col-sm-12 col-md-12">
-
+                <!-- buttons to display pages   -->
                 <button class="tablink btn btn-lg" onclick="openPage('active_orders', this)">Active</button>
-            <button class="tablink btn btn-lg" onclick="openPage('completed_orders', this)" id="defaultOpen">Completed</button>
-            <button class="tablink btn btn-lg" onclick="openPage('cancelled_orders', this)">Cancelled</button>
-        </div>
-            
+                <button class="tablink btn btn-lg" onclick="openPage('completed_orders', this)" id="defaultOpen">Completed</button>
+                <button class="tablink btn btn-lg" onclick="openPage('cancelled_orders', this)">Cancelled</button>
+            </div>
+
         </div>
         <!-- <button class="tablink" onclick="openPage('About', this, 'orange')">About</button> -->
 
@@ -148,6 +105,7 @@
     </script>
 
 
+    <!-- Jquerry to load footer here i am using margin top auto to allow footer to go to bottom even if there is no content inside body tag -->
     <footer style="margin-top: auto;" id="footer" class="footer-1">
         <script>
             $('#footer').load('footer.html');

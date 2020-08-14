@@ -10,17 +10,20 @@
 <script
     src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
 
+<style>
+    form {
+        margin: 0;
+    }
+</style>
 
-    <style>
-        form{
-            margin: 0;
-        }
-    </style>
+
+<!-- here i am using model classes to show pop window of login and sign up  -->
+<!-- display pop up login and sign up using jquerry -->
 
 <script>
     var selected_button = '';
-
     $(function () {
+        // when clicking on login button it will popup up login form
         $(".login_window_button").click(function () {
             $(".login_window_model").modal('show');
             selected_button = "login";
@@ -30,6 +33,7 @@
         });
     });
     $(function () {
+        // when clicking on sign up buttton it will pop up sign up
         $(".signup_window_button").click(function () {
             $(".signup_window_model").modal('show');
             selected_button = "signup";
@@ -41,6 +45,8 @@
 </script>
 
 
+
+<!-- html pop up login form using using model classes -->
 
 <div class="ui modal test login_window_model">
     <div class="ui middle aligned center aligned grid">
@@ -79,6 +85,8 @@
         </div>
     </div>
 </div>
+
+<!-- html pop up sign up form using using model classes -->
 <div class="ui modal test signup_window_model">
     <div class="ui middle aligned center aligned grid">
         <div class="column">
@@ -162,18 +170,19 @@
 
 
 
+
+<!-- footer starts here -->
+
 <footer id="footer" class="footer-1">
     <div class="main-footer widgets-dark typo-light">
         <div class="container">
             <div class="row">
-
                 <div class="col-xs-12 col-sm-6 col-md-3">
                     <div class="widget subscribe no-box">
                         <h5 class="widget-title">Interior Design<span></span></h5>
                         <p>A project of HAFSAH</p>
                     </div>
                 </div>
-
                 <div class="col-xs-12 col-sm-6 col-md-3">
                     <div class="widget no-box">
                         <h5 class="widget-title">Quick Links<span></span></h5>
@@ -186,7 +195,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="col-xs-12 col-sm-6 col-md-3">
                     <div class="widget no-box">
                         <h5 class="widget-title">Get Started<span></span></h5>
@@ -194,12 +202,9 @@
                         <a class="btn btn-color signup_window_button" id="ft_reg_btn" href="#">Register Now</a>
                     </div>
                 </div>
-
                 <div class="col-xs-12 col-sm-6 col-md-3">
-
                     <div class="widget no-box">
                         <h5 class="widget-title">Social links<span></span></h5>
-
                         <p><a class="ft_email" target="_blank"
                                 href="https://accounts.google.com/signin/v2/identifier?flowName=GlifWebSignIn&flowEntry=ServiceLogin&cid=1&navigationDirection=forward">interiordesigns@gmail.com</a>
                         </p>
@@ -223,11 +228,9 @@
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
-
     <div class="footer-copyright">
         <div class="container">
             <div class="row">
@@ -238,3 +241,7 @@
         </div>
     </div>
 </footer>
+
+<!-- footer ends here -->
+
+<!-- jquerry will be used to dislpay footer in all pages  -->

@@ -1,6 +1,7 @@
 <?php
 
 $connect = mysqli_connect("localhost", "root", "", "theinterior");
+// db connection
 
 
 
@@ -9,9 +10,11 @@ function get_blogpost($connect)
   $output = '';
   $count = 0;
 
-  $result = mysqli_query($connect, "SELECT * FROM blog");
+  $result = mysqli_query($connect, "SELECT * FROM blog"); //this query will select list of all blog from db we have now 5 total blogs 
 
   while ($row = mysqli_fetch_array($result)) {
+
+    // creating an html div to display blog in body section .. we are storing html elements in variable later on we will this function inside body tag
 
     $output .= '<div class="col-lg-6">
     <div class="blog-post">
@@ -20,7 +23,7 @@ function get_blogpost($connect)
       </div>
       <div class="down-content">
         <span>Category</span>
-        <a href="post-details.php?id='.$row['id'].'">
+        <a href="post-details.php?id=' . $row['id'] . '">
           <h4>' . $row['title'] . '</h4>
         </a>
         <ul class="post-info">
@@ -54,7 +57,7 @@ function get_recent_post($connect)
   $output = '';
   $count = 0;
 
-  $result = mysqli_query($connect, "SELECT * FROM blog WHERE id > 0");
+  $result = mysqli_query($connect, "SELECT * FROM blog ");
 
   while ($row = mysqli_fetch_array($result)) {
 
@@ -64,6 +67,7 @@ function get_recent_post($connect)
   <h5> ' . $row['title'] . ' </h5>
   <span>May 31, 2020</span>
 </a></li>';
+    //store title and id of blog in variable and using it inside list of hml 
   }
   return $output;
 }
@@ -85,22 +89,16 @@ function get_recent_post($connect)
   <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
   <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
 
+  <title>Interior Blog Posts</title>
 
-
-  <title>Interio Blog Posts</title>
-
-  
   <?php
   include 'header.php'
-
+  // it will display header 
   ?>
 </head>
 
 <body>
-
   <!-- Banner Ends Here -->
-
-
   <section class="blog-posts grid-system">
     <div class="container">
       <div class="row">
@@ -110,12 +108,10 @@ function get_recent_post($connect)
               <!-- here php class will be used -->
               <?php echo get_blogpost($connect);
               ?>
-
               <div class="col-lg-12">
                 <ul class="page-numbers">
                   <li class="active"><a href="#">1</a></li>
-
-                  <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+                  <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li> <!-- bootstrap icon -->
                 </ul>
               </div>
             </div>
@@ -124,7 +120,6 @@ function get_recent_post($connect)
         <div class="col-lg-4">
           <div class="sidebar">
             <div class="row">
-
               <div class="col-lg-12">
                 <div class="sidebar-item recent-posts">
                   <div class="sidebar-heading">
@@ -132,29 +127,12 @@ function get_recent_post($connect)
                   </div>
                   <div class="content">
                     <ul>
+                      <!-- calling the function to get all blog title and id of blog and display it in list -->
                       <?php echo get_recent_post($connect); ?>
                     </ul>
                   </div>
                 </div>
               </div>
-              <!-- <div class="col-lg-12">
-                <div class="sidebar-item categories">
-                  <div class="sidebar-heading">
-                    <h2>Categories</h2>
-                  </div>
-                  <div class="content">
-                    <ul>
-                      <li><a href="#">- Interior Design</a></li>
-                      <li><a href="#">- Office design</a></li>
-                      <li><a href="#">- Kitchen design</a></li>
-                      <li><a href="#">- Exterior design</a></li>
-                      <li><a href="#">- Garden design</a></li>
-                      <li><a href="#">- Floor design</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div> -->
-
             </div>
           </div>
         </div>
@@ -162,16 +140,12 @@ function get_recent_post($connect)
     </div>
   </section>
 
-
-
+  <!-- using jquerry to load footer from footer.html -->
   <footer id="footer" class="footer-1">
     <script>
       $('#footer').load('footer.html');
     </script>
   </footer>
-
-
-
 </body>
 
 </html>

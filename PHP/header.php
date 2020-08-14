@@ -7,20 +7,18 @@
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
 
 
+
+<!-- creating a navabar  -->
 <div>
-
     <nav class="navbar navbar-expand-lg navbar-style">
-       
-
         <a  class="mr-auto navbar-brand" href="index.php">
+            <!-- brand title or logo -->
             <h2 style="font-size: 20px;" >The Interiors<em>.</em></h2>
         </a> 
 
         <button style="font-size: 5vw;" class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span style="color: #00cca3;" ><i class="fa fa-caret-square-o-down" aria-hidden="true"></i></span>
         </button>
-
-
         <div class="collapse navbar-collapse ml-auto" id="navbarResponsive">
            
              <ul id="navbar-div" class="navbar-nav ml-auto">
@@ -41,7 +39,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="contact.php">Contact Us</a>
             </ul>
-
         </div>
     </nav>
 </div>
+
+<!-- this navbar will be displayed on every page by using jquerry  -->

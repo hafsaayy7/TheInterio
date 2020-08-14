@@ -7,13 +7,13 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="..\css\home.css">
-    <title>Service request</title>
-
     <link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css" rel="stylesheet" type="text/css" />
     <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
     <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
 
-    <style> 
+    <title>Service request</title>
+
+    <style>
         body {
             font-family: 'Roboto', sans-serif;
             overflow-x: hidden;
@@ -30,16 +30,13 @@
             line-height: 30px;
         }
 
-       
-
         .btn {
             margin: 20px;
             width: 140px;
-            color: white ;
-            background-color:  #00cca3 ;
+            color: white;
+            background-color: #00cca3;
             text-align: center;
         }
-
 
         ul {
             padding: 0;
@@ -54,6 +51,7 @@
         h6 {
             margin: 0px;
         }
+
         label {
             margin-left: 20px;
             /* width: 300px; */
@@ -80,6 +78,7 @@
         .tabcontent p {
             margin: 10px 0px;
         }
+
         .sidemenu {
             background-color: #cee7ef;
             padding-top: 20px;
@@ -117,42 +116,33 @@
             margin-bottom: 0.5rem;
         }
 
-       
-
         .content p {
             margin: 20px 0px;
         }
     </style>
 
-    <?php include 'header.php' ; ?>
 
-
+    <?php include 'header.php'; ?>
+    <!-- navbar/header will be displayed  -->
 
 </head>
 
 <body style="display: flex; flex-direction: column;">
-
     <div class="container">
-
         <div class="container">
             <div class="section">
                 <div class="row">
                     <div class="col-md-4 col-lg-4 sidemenu">
                         <aside class="sidebar" id="sidebar" data-plugin-sticky="" data-plugin-options="{'minWidth': 991, 'containerSelector': '.container', 'padding': {'top': 110}}">
-
                             <h2 class="heading-primary">Hire Us</h2>
                             <ul>
                                 <label for="contact">
-
                                     <li><a class="" href="contact.php">Request a call</a></li>
                                 </label>
-                               
                             </ul>
-
                         </aside>
                     </div>
                     <div class="col-md-8 col-lg-8 content">
-
                         <div class="row">
                             <div class="col">
                                 <h1 style=" margin :20px 0px;">Request a free estimate</h1>
@@ -168,7 +158,7 @@
                                         <label for="name">
                                             <h5>Your name</h5>
                                         </label>
-                                        <input type="text" class="form-control" id="name" name="name" value="" required pattern="^[a-zA-Z]{3,}">
+                                        <input type="text" class="form-control" id="name" name="name" value="" required pattern="^[a-zA-Z]{3,}[ a-z]{0,}">
                                     </div>
 
                                     <div class="form-group">
@@ -203,7 +193,6 @@
                                         </select>
 
                                     </div>
-
                                     <div class="form-group">
                                         <label for="budget">
                                             <h5>Your budget is</h5>
@@ -215,20 +204,14 @@
                                             <input type="text" name="budget" id="budget" class="form-control" value="" required>
                                         </div>
                                     </div>
-
-
                                     <div class="form-group">
-                                        <label  for="comments">
-                                            <h2 style="display: block;" >  Describe your project and requirements  </h2>
+                                        <label for="comments">
+                                            <h2 style="display: block;"> Describe your project and requirements </h2>
                                         </label>
-
                                         <textarea required rows="6" id="comments" class="form-control" name="comments"></textarea>
                                     </div>
-
-
                                     <br>
-                                    <div><input type="submit" value="Submit Quote" class="btn btn-lg" ></div>
-
+                                    <div><input type="submit" value="Submit Quote" class="btn btn-lg"></div>
                                 </form>
                                 <p></p>
                             </div>
@@ -240,14 +223,13 @@
         </div>
     </div>
 
-   
 
-    <footer style="margin-top: auto;" id = "footer" class="footer-1">
-    <script>
-      $('#footer').load('footer.html');
 
-    </script>
-  </footer>
+    <footer style="margin-top: auto;" id="footer" class="footer-1">
+        <script>
+            $('#footer').load('footer.html');
+        </script>
+    </footer>
 
 
 </body>
@@ -258,4 +240,3 @@
 </html>
 
 </html>
-

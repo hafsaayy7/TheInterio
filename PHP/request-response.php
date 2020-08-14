@@ -4,58 +4,34 @@
 <?php include 'header.php';
 
 $connect = mysqli_connect("localhost", "root", "", "theinterior");
-
-
 $name = $_POST['name'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
-// $phone = $_POST['budget'];
-
 $timeframe = $_POST['timeframe'];
 $budget = $_POST['budget'];
-
-// $service_name = $_POST['service_name_field'];
-// $service_detail = $_POST['service_request_field'];
 $requirements = $_POST['comments'];
 
+// getting all the data from request page using post request ... and insert it to database
 
-// INSERT INTO `request`(`nam`, `email`, `phone-no`, `timeframe`, `budget`, `project-requirements`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6])
+$query = "INSERT INTO `theinterior`.`request`(`name`, `email`, `phone-no`,`timeframe`,`budget`,`project-requirements`) VALUES ('$name', '$email', '$phone','$timeframe','$budget' , '$requirements')";
 
-
-    $query = "INSERT INTO `theinterior`.`request`(`name`, `email`, `phone-no`,`timeframe`,`budget` , `project-requirements`) VALUES ('$name', '$email', '$phone','$timeframe','$budget' , '$requirements')";
-    // mysqli_query($connect, $query);
-
-    // run your code here
-
-
-    if(mysqli_query($connect, $query)){
-        echo '<h2 class = "container" style =" margin:  auto ; font-size : 30px">Thank You !! We have recieved Your request . We will contact you shortly</h2>';
-        // echo "Records inserted successfully.";
-    } else{
-        echo "ERROR: Could not able to execute $sql. " . mysqli_error($connect);
-    }
-    
-
-
-
-
+if (mysqli_query($connect, $query)) {
+    // display thank you message to user after inserting it to databse
+    echo '<h2 class = "container" style =" margin:  auto ; font-size : 30px">Thank You !! We have recieved Your request . We will contact you shortly</h2>';
+    // echo "Records inserted successfully.";
+} else {
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($connect);
+}
 ?>
-
-
 
 <html>
 
 <body style=" display :flex ;  flex-direction: column;">
-
-
-
     <footer style="margin-top: auto;" id="footer" class="footer-1">
         <script>
             $('#footer').load('footer.html');
         </script>
     </footer>
-
-
 </body>
 
 </html>
